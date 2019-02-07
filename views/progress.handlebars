@@ -18,54 +18,47 @@
 
 		<hr class="m-0">
 
-		<h6 class="prompt pb-1 pt-4">
+		<h5 class="prompt pb-1 pt-4 mb-4">
 			Current Activity*
-		</h6>
+		</h5>
 
 		<!--Distracted Button-->
-		<div class = "distracted">
-			<a href = "">
-				<div class="p-2 mx-5 border rounded distracted">
-					Distracted?
-				</div>
-			</a>
+		<a class="px-4 py-2 mx-5 mt-3 border rounded distracted">
+			Distracted?
+		</a>
+
+		<div class="clock-motion my-5">
+			<div class="time p-3 mt-5">
+				00 : 00
+			</div>
+			<div class="time-elap px-4 py-2">
+				Time Elapsed
+			</div>
 		</div>
 
-
-
 		<!--Distracted count-->
-		<div class="distNumber position-absolute">
-			<p># of distractions: 0</p>
+		<div class="dist-num p-4 my-5">
+			# of distractions: 0
 		</div>
 
 		<!--Pause and End Button(side by side)-->
-		<div>
-			<a href = "">
-				<div class="start p-2 mx-5 border rounded position-absolute">
-					Pause
-				</div>
+		<div class="act-btn">
+			<a class="pause border rounded mr-4 py-2 px-5 col-10">
+				Pause
 			</a>
-			<a href = "">
-				<div class="start p-2 mx-5 border rounded position-absolute">
-				<!--end square symbol(black for now)-->
-					<div class="square"></div>
-				</div>
+			<a class="border rounded py-2 px-2 col-2">
+				End
 			</a>
 		</div>
 
-
-
 		<!--Activity and Navigation Button-->		
 		<div class="nav-pane fixed-bottom row pt-2">
-			<a href = "">
-			<div class="nav-button col-6 border p-2">
-			</a>
+			<a class="nav-button col-6 border p-2">
 				ACTIVITY
-			</div>
-
-			<div class="nav-button col-6 border p-2">
+			</a>
+			<a class="nav-button col-6 border p-2">
 				DATA
-			</div>
+			</a>
 		</div>
 
 	</div>
