@@ -1,0 +1,34 @@
+.container{
+	width: 375;
+}
+
+hr {
+	margin: 0;
+}
+
+.nav-button {
+	height: 45px;
+}
+
+.start {
+	bottom: 100px;
+	left: 80px;
+	width: 125px;
+	height: 45px;
+}
+
+.time-prompt {
+	width: 150px;
+	position: relative;
+	left: 65px;
+
+}
+
+.time {
+	font-size: 35px;
+}
+
+.clock-placeholder {
+	position: relative;
+	top: 60px;
+}
