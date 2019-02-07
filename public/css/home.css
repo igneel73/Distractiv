@@ -15,6 +15,18 @@ hr {
 	left: 80px;
 	width: 125px;
 	height: 45px;
+	color: black;
+}
+
+.distNumber {
+	bottom: 150px;
+	width: 100%;
+	text-align: center;
+	color: black;
+}
+
+.distracted{
+	color: black;
 }
 
 .time-prompt {
@@ -32,3 +44,10 @@ hr {
 	position: relative;
 	top: 60px;
 }
+
+.square {
+  height: 25px;
+  width: 25px;
+}
+
+

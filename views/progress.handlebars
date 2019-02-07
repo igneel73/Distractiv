@@ -1,8 +1,7 @@
 <!doctype html>
-
 <html>
 <head>
-	<title>Home Page</title>
+	<title>Progress Page</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -14,42 +13,61 @@
 <body>
 	<div class=" text-center">
 		<h4 class="screen-heading center-align p-3 m-0 shadow-md">
-			Start An Activity
+			In Progress
 		</h4>
+
 		<hr class="m-0">
+
 		<h6 class="prompt pb-1 pt-4">
-			Select Activity Type
+			Current Activity*
 		</h6>
-		<input class="act-type p-2 rounded" placeholder="Eg. Study">
 
-		</input>
-
-		<div class="clock-placeholder my-5">
-			<div class="time p-3 mt-5">
-				00 : 00
-			</div>
-			<div class="time_prompt p-2 mx-5 mb-5 border rounded">
-				Edit Time
-			</div>
-		</div>
-
-		<!--Start Button-->
-		<div>
-			<a href="./start">
-				<div class="start p-2 mx-5 border rounded position-absolute">
-					START
+		<!--Distracted Button-->
+		<div class = "distracted">
+			<a href = "">
+				<div class="p-2 mx-5 border rounded distracted">
+					Distracted?
 				</div>
 			</a>
 		</div>
-		
+
+
+
+		<!--Distracted count-->
+		<div class="distNumber position-absolute">
+			<p># of distractions: 0</p>
+		</div>
+
+		<!--Pause and End Button(side by side)-->
+		<div>
+			<a href = "">
+				<div class="start p-2 mx-5 border rounded position-absolute">
+					Pause
+				</div>
+			</a>
+			<a href = "">
+				<div class="start p-2 mx-5 border rounded position-absolute">
+				<!--end square symbol(black for now)-->
+					<div class="square"></div>
+				</div>
+			</a>
+		</div>
+
+
+
+		<!--Activity and Navigation Button-->		
 		<div class="nav-pane fixed-bottom row pt-2">
+			<a href = "">
 			<div class="nav-button col-6 border p-2">
+			</a>
 				ACTIVITY
 			</div>
+
 			<div class="nav-button col-6 border p-2">
 				DATA
 			</div>
 		</div>
+
 	</div>
 </body>
 </html>
