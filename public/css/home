@@ -1,1 +1,11 @@
-home.css
+.container{
+	width: 375;
+}
+
+.screen-title{
+	
+}
+
+hr {
+	margin: 0; !important
+}
