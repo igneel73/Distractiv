@@ -1,0 +1,55 @@
+
+
+/* general */
+.container{
+	width: 375;
+}
+
+hr {
+	margin: 0;
+}
+
+.nav-button {
+	height: 45px;
+}
+
+/* first screen */
+
+.start {
+	position: relative;
+	top:180px;
+	color: black;
+}
+
+.time-prompt {
+	width: 125px;
+	position: relative;
+	left: 65px;
+
+}
+
+.time {
+	font-size: 35px;
+}
+
+.clock-placeholder {
+	position: relative;
+	top: 60px;
+}
+
+/* second screen */
+
+.clock-motion {
+	position: relative;
+	top: 20px;
+}
+
+.dist-num {
+	position: relative;
+	top: 40px;
+}
+
+.act-btn {
+	position: relative;
+	top: 40px;
+}

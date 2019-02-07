@@ -1,8 +1,7 @@
 <!doctype html>
-
 <html>
 <head>
-	<title>Home Page</title>
+	<title>Progress Page</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -14,32 +13,45 @@
 <body>
 	<div class=" text-center">
 		<h4 class="screen-heading center-align p-3 m-0 shadow-md">
-			Start An Activity
+			In Progress
 		</h4>
+
 		<hr class="m-0">
-		<h6 class="prompt pb-1 pt-4">
-			Select Activity Type
-		</h6>
-		<input class="act-type p-2 rounded" placeholder="Eg. Study">
 
-		</input>
+		<h5 class="prompt pb-1 pt-4 mb-4">
+			Current Activity*
+		</h5>
 
-		<div class="clock-placeholder my-5">
+		<!--Distracted Button-->
+		<a class="px-4 py-2 mx-5 mt-3 border rounded distracted">
+			Distracted?
+		</a>
+
+		<div class="clock-motion my-5">
 			<div class="time p-3 mt-5">
 				00 : 00
 			</div>
-			<a class="time_prompt px-4 py-2 m-5 border rounded">
-				Edit Time
+			<div class="time-elap px-4 py-2">
+				Time Elapsed
+			</div>
+		</div>
+
+		<!--Distracted count-->
+		<div class="dist-num p-4 my-5">
+			# of distractions: 0
+		</div>
+
+		<!--Pause and End Button(side by side)-->
+		<div class="act-btn">
+			<a class="pause border rounded mr-4 py-2 px-5 col-10">
+				Pause
+			</a>
+			<a class="border rounded py-2 px-2 col-2">
+				End
 			</a>
 		</div>
 
-		<!--Start Button-->
-		<div>
-			<a href="/start" class="start p-2 px-4 mx-5 border rounded">
-				START
-			</a>
-		</div>
-		
+		<!--Activity and Navigation Button-->		
 		<div class="nav-pane fixed-bottom row pt-2">
 			<a class="nav-button col-6 border p-2">
 				ACTIVITY
@@ -48,6 +60,7 @@
 				DATA
 			</a>
 		</div>
+
 	</div>
 </body>
 </html>
