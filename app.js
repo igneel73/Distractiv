@@ -10,6 +10,7 @@ var handlebars = require('express3-handlebars')
 
 var index = require('./routes/index');
 var progress = require('./routes/progress')
+var data = require('./routes/data')
 
 // Example route
 // var user = require('./routes/user');
@@ -38,6 +39,7 @@ if ('development' == app.get('env')) {
 
 app.get('/', index.view);
 app.get('/start', progress.view)
+app.get('/data', data.view)
 // Example route
 // app.get('/users', user.list);
 

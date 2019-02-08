@@ -13,6 +13,15 @@ hr {
 	height: 45px;
 }
 
+a {
+	color: black;
+}
+
+a:hover {
+	text-decoration: none;
+	color:black;
+}
+
 /* first screen */
 
 .start {
