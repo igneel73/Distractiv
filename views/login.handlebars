@@ -2,7 +2,7 @@
 
 <html>
 <head>
-	<title>Data Page</title>
+	<title>Login</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -12,26 +12,23 @@
 	<link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
-	<div class=" text-center">
+	<div class="text-center">
 		<h4 class="screen-heading center-align p-3 m-0 shadow-md">
-			Data
+			distrACTIV
 		</h4>
 		<hr class="m-0">
 
-		<p>Under Construction</p>
-		<div>
-			<a href="/home">Back to activity page</a>
+		<form class="login p-5 my-5" action="./home" method="get">
+			<input class="p-1 mx-3 my-2" type="text" name="user" placeholder="User Name">
+			<input class="p-1 mx-3 my-2" type="password" name="pass" placeholder="Password"> 
+			<input class="m-3 px-2" type="submit" name="login" value="Login">
+			<input class="m-3 px-2" type="button" name="signup" value="Sign Up">
+		</form> 
+
+		<div class="social logins">
+			
 		</div>
 
-
-
-
-
-
 	</div>
-
-
-
-
 </body>
 </html>

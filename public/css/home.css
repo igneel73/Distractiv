@@ -22,7 +22,7 @@ a:hover {
 	color:black;
 }
 
-/* first screen */
+/* home screen */
 
 .start {
 	position: relative;
@@ -46,7 +46,7 @@ a:hover {
 	top: 60px;
 }
 
-/* second screen */
+/* progress screen */
 
 .clock-motion {
 	position: relative;
@@ -61,4 +61,11 @@ a:hover {
 .act-btn {
 	position: relative;
 	top: 40px;
+}
+
+/* login screen */
+
+.login {
+	position: relative;
+	top: 80px;
 }
