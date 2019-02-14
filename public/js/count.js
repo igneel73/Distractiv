@@ -6,9 +6,7 @@ var hrs = 0;
 
 // hide popup at the start
 // start the clock too
-$(document).ready(function (e){
-	$(".pop-up").hide();
-});
+$(".pop-up").hide();
 
 var clock = setInterval(tick, 1000);
 var clockanim = setInterval(anim, 250);
@@ -19,37 +17,42 @@ $(".distracted").click(function(e) {
 	count+= 1;
 	$(".dist-num .num").text(count);
 	$(".pop-up").show();
+	pause();
 
 });
 
 
-$(".pause").click(function(e) {
-	var text = $(this).text();
-	if(text.includes("Pause")){
-		$(this).text("Start");
-		clearInterval(clock);
-	} else {
-		$(this).text("Pause");
-		clock = setInterval(tick,1000);
-	}
-})
+$(".pause").click(pause);
 
 $(".ok").click(function(e){
 	// save the entry
 	// hide the popup
 	$(".pop-up").hide();
+	pause();
 });
 
 $(".cancel").click(function(e){
 	// don't save the entry
 	// hide the popup
 	$(".pop-up").hide();
+	pause();
 })
+
+function pause(e) {
+	var text = $(".pause").text();
+	if(text.includes("Pause")){
+		$(".pause").text("Start");
+		clearInterval(clock);
+	} else {
+		$(".pause").text("Pause");
+		clock = setInterval(tick,1000);
+	}
+}
 
 // update clock
 function tick(){
 
-	secs++;
+	secs = parseInt($("#secs").text());
 	mins = parseInt($("#mins").text());
 	hrs = parseInt($("#hours").text());
 
@@ -61,6 +64,8 @@ function tick(){
 	else if(mins==60){
 		hrs++;
 		mins = 0;
+	} else {
+		secs++;
 	}
 
 	// format with 0 and update display
@@ -76,13 +81,18 @@ function tick(){
 		$("#mins").text(mins);
 	}
 
+	if(secs<10){
+		$("#secs").text("0" + secs);
+	} else {
+		$("#secs").text(secs);
+	}
+
 }
 
 // animate clock
 function anim(){
 
 	var clock = $(".clock-motion");
-
 	
 }
 
