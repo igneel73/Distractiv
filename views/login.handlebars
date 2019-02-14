@@ -19,16 +19,26 @@
 		<hr class="m-0">
 
 		<form class="login p-5 my-5" action="./home" method="get">
+			<h5 class="m-2">Login To Existing Account</h5>
 			<input class="p-1 mx-3 my-2" type="text" name="user" placeholder="User Name">
 			<input class="p-1 mx-3 my-2" type="password" name="pass" placeholder="Password"> 
 			<input class="m-3 px-2" type="submit" name="login" value="Login">
-			<input class="m-3 px-2" type="button" name="signup" value="Sign Up">
+			<input class="signup-btn m-3 px-2" type="button" name="signup" value="Sign Up">
 		</form> 
+		<form class="signup p-5 my-5" action="./home" method="get">
+			<h5 class="m-2">Create An Account</h5>
+			<input class="p-1 mx-3 my-2" type="email" name="email" placeholder="example@email.com">
+			<input class="p-1 mx-3 my-2" type="text" name="user" placeholder="User Name">
+			<input class="p-1 mx-3 my-2" type="password" name="pass" placeholder="Password"> 
+			<input class="m-3 px-2" type="submit" name="signup" value="Sign Up">
+			<input class="login-btn m-3 px-2" type="button" name="login" value="Login">
+		</form>
 
 		<div class="social logins">
 			
 		</div>
 
 	</div>
+	<script type="text/javascript" src="/js/login.js"></script>
 </body>
 </html>

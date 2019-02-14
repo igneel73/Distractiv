@@ -51,6 +51,7 @@ function tick(){
 	mins = parseInt($("#mins").text());
 	hrs = parseInt($("#hours").text());
 
+	// check if 1 minute has passed
 	if(secs==60){
 		mins++;
 		secs = 0;
@@ -60,6 +61,7 @@ function tick(){
 		mins = 0;
 	}
 
+	// format with 0 and update display
 	if(hrs<10){
 		$("#hours").text("0" + hrs);
 	} else {
