@@ -83,6 +83,23 @@ a:hover {
 	top: 40px;
 }
 
+.pop-up {
+	display: block;
+	position: absolute;
+	top: 5rem;
+	left: 3rem;
+	z-index: 100;
+	background-color: #efefef;
+}
+
+.icon {
+	font-size: 1.5rem;
+}
+
+.dist {
+	z-index: -1;
+}
+
 /* login screen */
 
 .login {
