@@ -49,8 +49,28 @@ a:hover {
 /* progress screen */
 
 .clock-motion {
+	box-sizing: border-box;
 	position: relative;
 	top: 20px;
+	border-radius: 50%;
+	width: 77.5%;
+	padding-top: 77.5%;
+}
+
+.time-num {
+	position: absolute;
+	top:30%;
+	left:0;
+	bottom: 0;
+	right: 0;
+}
+
+.time-elap {
+	position: absolute;
+	top:55%;
+	left:0;
+	bottom: 0;
+	right: 0;
 }
 
 .dist-num {

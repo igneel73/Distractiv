@@ -11,6 +11,7 @@ $(document).ready(function (e){
 });
 
 var clock = setInterval(tick, 1000);
+var clockanim = setInterval(anim, 250);
 
 // increase distraction counter by one
 $(".distracted").click(function(e) {
@@ -47,6 +48,7 @@ $(".cancel").click(function(e){
 
 // update clock
 function tick(){
+
 	secs++;
 	mins = parseInt($("#mins").text());
 	hrs = parseInt($("#hours").text());
@@ -74,4 +76,12 @@ function tick(){
 		$("#mins").text(mins);
 	}
 
+}
+
+// animate clock
+function anim(){
+
+	var clock = $(".clock-motion");
+
+	
 }
