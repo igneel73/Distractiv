@@ -18,9 +18,55 @@
 		</h4>
 		<hr class="m-0">
 
-		<p>Under Construction</p>
-		<div>
-			<a href="/home">Back to activity page</a>
+		<h4 id = "Type">Type: 
+			<span class="dropdown">
+			  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Math
+			  <span class="caret"></span></button>
+			  <ul class="dropdown-menu">
+					{{#each activity}}
+						<li><a href="#">{{name}}</a></li>	
+	    			{{/each}}
+			  </ul>
+			</span>
+
+
+		</h4>
+
+
+		<h4 id = "Graph" >Graph: 
+			<span class="dropdown">
+				<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Bar
+				<span class="caret"></span></button>
+				<ul class="dropdown-menu">
+					<li><button onclick= document.getElementbyId("graphPic").src="https://www.mathsisfun.com/data/images/bar-graph-fruit.svg">Bar</button></li>
+					<li><button onclick=document.getElementbyId("graphPic").src="https://www.smartsheet.com/sites/default/files/ic-line-charts-excel-single-line-graph-created.png">Line</button></li>
+				</ul>
+			</span>
+		</h4>
+		<h4>Detail: 		
+			<span>
+				<button class="fineRough border white">
+					Fine
+				</button>
+				<button class="fineRough border white">
+					Rough
+				</button>
+			</span>
+		</h4>
+
+
+
+	<img id="graphPic" src="https://www.mathsisfun.com/data/images/bar-graph-fruit.svg class="graph">
+
+
+		<!--Activity and Navigation Button-->		
+		<div class="nav-pane fixed-bottom row pt-2">
+			<a href="/home" class="nav-button col-6 border p-2">
+				ACTIVITY
+			</a>
+			<span class="nav-button col-6 border p-2 lBlue">
+				DATA
+			</span>
 		</div>
 
 
@@ -31,7 +77,6 @@
 	</div>
 
 
-
-
+	<script type="text/javascript" src="/js/count.js"></script>
 </body>
 </html>

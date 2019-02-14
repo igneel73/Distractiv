@@ -30,11 +30,31 @@ a:hover {
 	color: black;
 }
 
+.white{
+	background-color: white;
+}
+
+.graph{
+	position: relative;
+	width:200px;
+	height:200px;
+	top: 80px;
+}
+
+.lBlue {
+	background-color: #43E7F5;
+}
+
 .time-prompt {
 	width: 125px;
 	position: relative;
 	left: 65px;
 
+}
+
+.fineRough {
+	width: 125 px;
+	position: relative;
 }
 
 .time {

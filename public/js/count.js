@@ -85,3 +85,14 @@ function anim(){
 
 	
 }
+
+//Change Dropdown text to match selected text
+$("#Type .dropdown .dropdown-menu li").click(function(req,res) {
+	$("#Type .dropdown .btn").text($(this).text());
+});
+
+//Change Dropdown text to match selected text for Graph and correct graph output
+$("#Graph .dropdown .dropdown-menu li").click(function(req,res) {
+	$("#Graph .dropdown .btn").text($(this).text());
+});
+
