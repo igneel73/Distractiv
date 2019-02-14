@@ -91,8 +91,15 @@ $("#Type .dropdown .dropdown-menu li").click(function(req,res) {
 	$("#Type .dropdown .btn").text($(this).text());
 });
 
-//Change Dropdown text to match selected text for Graph and correct graph output
+//Change Dropdown text to match selected text for Graph, and set correct graph output
 $("#Graph .dropdown .dropdown-menu li").click(function(req,res) {
 	$("#Graph .dropdown .btn").text($(this).text());
+	if($(this).text() == "Bar"){
+		$("#graphPic").attr('src',"https://www.mathsisfun.com/data/images/bar-graph-fruit.svg");
+	}
+	else{
+		$("#graphPic").attr('src', "https://www.smartsheet.com/sites/default/files/ic-line-charts-excel-single-line-graph-created.png");
+	}
+
 });
 

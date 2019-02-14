@@ -12,13 +12,14 @@
 	<link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
-	<div class=" text-center">
+	<div class="text-center">
 		<h4 class="screen-heading center-align p-3 m-0 shadow-md">
 			Data
 		</h4>
 		<hr class="m-0">
 
-		<h4 id = "Type">Type: 
+<div class="text-align: left">
+		<h4 id = "Type">Activity Type: 
 			<span class="dropdown">
 			  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Math
 			  <span class="caret"></span></button>
@@ -33,13 +34,13 @@
 		</h4>
 
 
-		<h4 id = "Graph" >Graph: 
+		<h4 id = "Graph">Graph: 
 			<span class="dropdown">
 				<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Bar
 				<span class="caret"></span></button>
 				<ul class="dropdown-menu">
-					<li><button onclick= document.getElementbyId("graphPic").src="https://www.mathsisfun.com/data/images/bar-graph-fruit.svg">Bar</button></li>
-					<li><button onclick=document.getElementbyId("graphPic").src="https://www.smartsheet.com/sites/default/files/ic-line-charts-excel-single-line-graph-created.png">Line</button></li>
+					<li><a href="#">Bar</a></li>
+					<li><a href="#">Line</a></li>
 				</ul>
 			</span>
 		</h4>
@@ -49,22 +50,35 @@
 					Fine
 				</button>
 				<button class="fineRough border white">
-					Rough
+					Course
 				</button>
 			</span>
 		</h4>
+		<h4>Timeframe: 		
+			<span>
+				<button class="fineRough border white">
+					Day
+				</button>
+				<button class="fineRough border white">
+					Week
+				</button>
+				<button class="fineRough border white">
+					Month
+				</button>
+			</span>
+		</h4>
+</div>
 
-
-
-	<img id="graphPic" src="https://www.mathsisfun.com/data/images/bar-graph-fruit.svg class="graph">
-
+		<div>
+			<img id="graphPic" src="https://www.mathsisfun.com/data/images/bar-graph-fruit.svg" class="graph">
+		</div>
 
 		<!--Activity and Navigation Button-->		
 		<div class="nav-pane fixed-bottom row pt-2">
 			<a href="/home" class="nav-button col-6 border p-2">
 				ACTIVITY
 			</a>
-			<span class="nav-button col-6 border p-2 lBlue">
+			<span class="nav-button col-6 border p-2 highlight">
 				DATA
 			</span>
 		</div>
