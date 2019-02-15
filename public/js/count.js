@@ -1,4 +1,5 @@
 
+
 // vars for time
 var secs = 0;
 var mins = 0;
@@ -96,13 +97,25 @@ function anim(){
 	
 }
 
-//Change Dropdown text to match selected text
-$("#Type .dropdown .dropdown-menu li").click(function(req,res) {
+/*dynamically push inputted activity into activity type drop down on data page
+$("#Start #startButton").click(function(e){
+	console.log("hereagain");
+	$(this).text("No");
+	/*var newActivity = {
+		"name": $(".text-center #inAct").text()	
+	}
+	//console.log(newActivity)
+	//newAct.activity.push(newActivity);
+});*/
+
+
+//Change activity type dropdown text to match selected text
+$("#Type .dropdown .dropdown-menu li").click(function(e) {
 	$("#Type .dropdown .btn").text($(this).text());
 });
 
 //set bar graph output
-$("#Graph #Bar").click(function(req,res) {
+$("#Graph #Bar").click(function(e) {
 		$("#Graph #Line").removeAttr('class', "on")
 		$("#Graph #Line").attr('class', "off")
 		$("#Graph #Bar").attr('class', "on")
@@ -111,7 +124,7 @@ $("#Graph #Bar").click(function(req,res) {
 });
 
 //set line graph output
-$("#Graph #Line").click(function(req,res) {
+$("#Graph #Line").click(function(e) {
 	$("#Graph #Bar").removeAttr('class', "on")
 	$("#Graph #Bar").attr('class', "off")
 	$("#Graph #Line").attr('class', "on")
@@ -120,7 +133,7 @@ $("#Graph #Line").click(function(req,res) {
 });
 
 //set day graph output
-$("#Timeline #Day").click(function(req,res) {
+$("#Timeline #Day").click(function(e) {
 		$("#Timeline #Week").removeAttr('class', "on")
 		$("#Timeline #Month").removeAttr('class', "on")
 		$("#Timeline #Week").attr('class', "off")
@@ -131,7 +144,7 @@ $("#Timeline #Day").click(function(req,res) {
 });
 
 //set week graph output
-$("#Timeline #Week").click(function(req,res) {
+$("#Timeline #Week").click(function(e) {
 		$("#Timeline #Day").removeAttr('class', "on")
 		$("#Timeline #Month").removeAttr('class', "on")
 		$("#Timeline #Day").attr('class', "off")
@@ -142,7 +155,7 @@ $("#Timeline #Week").click(function(req,res) {
 });
 
 //set month graph output
-$("#Timeline #Month").click(function(req,res) {
+$("#Timeline #Month").click(function(e) {
 		$("#Timeline #Day").removeAttr('class', "on")
 		$("#Timeline #Week").removeAttr('class', "on")
 		$("#Timeline #Day").attr('class', "off")

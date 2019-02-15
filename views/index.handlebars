@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
-	<div class=" text-center">
+	<div class="text-center">
 		<h4 class="screen-heading center-align p-3 m-0 shadow-md">
 			Start An Activity
 		</h4>
@@ -21,7 +21,7 @@
 		<h6 class="prompt pb-1 pt-4">
 			Select Activity Type
 		</h6>
-		<input name="act-type" class="act-type p-2 rounded" placeholder="Eg. Study">
+		<input name="act-type" class="act-type p-2 rounded" placeholder="Eg. Study" id="inAct">
 		</input>
 
 		<div class="clock-placeholder my-5">
@@ -48,12 +48,13 @@
 		</div>
 
 		<!--Start Button-->
-		<div>
-			<a href="/start" class="start p-2 px-4 mx-5 border rounded">
+		<div id="Start">
+			<a href="/start" class="start p-2 px-4 mx-5 border rounded" id="startButton">
 				START
 			</a>
 		</div>
 		
+		<!--Activity and Data Button-->
 		<div class="nav-pane fixed-bottom row pt-2">
 			<span class="nav-button col-6 border p-2 highlight">
 				ACTIVITY
