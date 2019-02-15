@@ -9,10 +9,11 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 	<link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
-	<div class=" text-center">
+	<div class="text-center">
 		<h4 class="screen-heading center-align p-3 m-0 shadow-md">
 			Start An Activity
 		</h4>
@@ -20,33 +21,49 @@
 		<h6 class="prompt pb-1 pt-4">
 			Select Activity Type
 		</h6>
-		<input name="act-type" class="act-type p-2 rounded" placeholder="Eg. Study">
+		<input name="act-type" class="act-type p-2 rounded" placeholder="Eg. Study" id="inAct">
 		</input>
 
 		<div class="clock-placeholder my-5">
+			
 			<div class="time p-3 mt-5">
-				00 : 00
+				<a class="time-btns" id="l2">
+					<i class="fas fa-angle-double-left mr-3 "></i>
+				</a>
+				<a class="time-btns" id="l1">
+					<i class="fas fa-angle-left mr-3 "></i>
+				</a>
+				<span id="hours">00</span> : <span id="mins">00</span> : <span id="secs">00</span>
+				<a class="time-btns" id="r1">
+					<i class="fas fa-angle-right ml-3"></i>
+				</a>
+				<a class="time-btns" id="r2">
+					<i class="fas fa-angle-double-right ml-3"></i>
+				</a>
 			</div>
+			
 			<a href="#" class="time_prompt px-4 py-2 m-5 border rounded">
-				Edit Time
+				Set Time
 			</a>
 		</div>
 
 		<!--Start Button-->
-		<div>
-			<a href="/start" class="start p-2 px-4 mx-5 border rounded">
+		<div id="Start">
+			<a href="/start" class="start p-2 px-4 mx-5 border rounded" id="startButton">
 				START
 			</a>
 		</div>
 		
+		<!--Activity and Data Button-->
 		<div class="nav-pane fixed-bottom row pt-2">
-			<a href="/home" class="nav-button col-6 border p-2">
+			<span class="nav-button col-6 border p-2 highlight">
 				ACTIVITY
-			</a>
+			</span>
 			<a href="/data" class="nav-button col-6 border p-2">
 				DATA
 			</a>
 		</div>
 	</div>
+	<script type="text/javascript" src="/js/home.js"></script>
 </body>
 </html>

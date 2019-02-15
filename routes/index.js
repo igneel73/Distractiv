@@ -1,4 +1,4 @@
-
+var data = require("../public/data.json");
 /*
  * GET home page.
  */

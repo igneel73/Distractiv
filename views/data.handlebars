@@ -12,26 +12,82 @@
 	<link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
-	<div class=" text-center">
+	<div class="text-center">
 		<h4 class="screen-heading center-align p-3 m-0 shadow-md">
 			Data
 		</h4>
 		<hr class="m-0">
+	</div>
 
-		<p>Under Construction</p>
+	<div class="text-align: left">
+		<h4 id = "Type">Activity Type: 
+			<span class="dropdown">
+			  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Math
+			  <span class="caret"></span></button>
+			  <ul class="dropdown-menu">
+					{{#each activity}}
+						<li><a href="#">{{name}}</a></li>	
+	    			{{/each}}
+			  </ul>
+			</span>
+		</h4>
+
+
+		<h4 id ="Graph">Graph:
+			<span>
+				<button class="fineRough border white on" id="Bar">
+					Bar
+				</button>
+				<button class="fineRough border white" id ="Line">
+					Line
+				</button>
+			</span> 
+		</h4>
+
+		<h4 id="Timeline">Timeframe: 		
+			<span>
+				<button class="fineRough border white on" id="Day">
+					Day
+				</button>
+				<button class="fineRough border white" id = "Week">
+					Week
+				</button>
+				<button class="fineRough border white" id="Month">
+					Month
+				</button>
+			</span>
+		</h4>
+	</div>
+
+	<div>
+		<p>*click on graph for distraction details</p>
+	</div>
+
+	<div class="text-center">
 		<div>
-			<a href="/home">Back to activity page</a>
+			<a href="#"><img id="graphPic" src="https://www.mathsisfun.com/data/images/bar-graph-fruit.svg" class="graph"</a>
+		</div>
+	</div>
+		<div class="text-align: left">
+			<p>Most Recent</p>
+			{{#each distraction}}
+				<h6><small>Activity: {{name}} -- Distraction Count: {{amount}} -- Most Common: {{mostCommon}}</small></h6>
+   			{{/each}}
 		</div>
 
-
-
-
-
-
+	<div class="text-center">
+		<!--Activity and Navigation Button-->		
+		<div class="nav-pane fixed-bottom row pt-2">
+			<a href="/home" class="nav-button col-6 border p-2">
+				ACTIVITY
+			</a>
+			<span class="nav-button col-6 border p-2 highlight">
+				DATA
+			</span>
+		</div>
 	</div>
 
 
-
-
+	<script type="text/javascript" src="/js/count.js"></script>
 </body>
 </html>
