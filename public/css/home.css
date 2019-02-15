@@ -34,6 +34,16 @@ a:hover {
 	background-color: white;
 }
 
+/*data on*/
+.on{
+	background-color: #CCC5C5;
+}
+
+/*data off*/
+.off{
+	background-color: white;
+}
+
 .graph{
 	position: relative;
 	width:300px;

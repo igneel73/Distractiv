@@ -17,8 +17,9 @@
 			Data
 		</h4>
 		<hr class="m-0">
+	</div>
 
-<div class="text-align: left">
+	<div class="text-align: left">
 		<h4 id = "Type">Activity Type: 
 			<span class="dropdown">
 			  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Math
@@ -29,48 +30,42 @@
 	    			{{/each}}
 			  </ul>
 			</span>
-
-
 		</h4>
 
 
-		<h4 id = "Graph">Graph: 
-			<span class="dropdown">
-				<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Bar
-				<span class="caret"></span></button>
-				<ul class="dropdown-menu">
-					<li><a href="#">Bar</a></li>
-					<li><a href="#">Line</a></li>
-				</ul>
-			</span>
-		</h4>
-		<h4>Detail: 		
+		<h4 id ="Graph">Graph:
 			<span>
-				<button class="fineRough border white">
-					Fine
+				<button class="fineRough border white on" id="Bar">
+					Bar
 				</button>
-				<button class="fineRough border white">
-					Course
+				<button class="fineRough border white" id ="Line">
+					Line
 				</button>
-			</span>
+			</span> 
 		</h4>
-		<h4>Timeframe: 		
+
+		<h4 id="Timeline">Timeframe: 		
 			<span>
-				<button class="fineRough border white">
+				<button class="fineRough border white on" id="Day">
 					Day
 				</button>
-				<button class="fineRough border white">
+				<button class="fineRough border white" id = "Week">
 					Week
 				</button>
-				<button class="fineRough border white">
+				<button class="fineRough border white" id="Month">
 					Month
 				</button>
 			</span>
 		</h4>
-</div>
+	</div>
 
+	<div>
+		<p>*click on graph for distraction details</p>
+	</div>
+
+	<div class="text-center">
 		<div>
-			<img id="graphPic" src="https://www.mathsisfun.com/data/images/bar-graph-fruit.svg" class="graph">
+			<a href="#"><img id="graphPic" src="https://www.mathsisfun.com/data/images/bar-graph-fruit.svg" class="graph"</a>
 		</div>
 
 		<!--Activity and Navigation Button-->		
@@ -82,12 +77,6 @@
 				DATA
 			</span>
 		</div>
-
-
-
-
-
-
 	</div>
 
 

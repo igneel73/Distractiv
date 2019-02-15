@@ -101,15 +101,57 @@ $("#Type .dropdown .dropdown-menu li").click(function(req,res) {
 	$("#Type .dropdown .btn").text($(this).text());
 });
 
-//Change Dropdown text to match selected text for Graph, and set correct graph output
-$("#Graph .dropdown .dropdown-menu li").click(function(req,res) {
-	$("#Graph .dropdown .btn").text($(this).text());
-	if($(this).text() == "Bar"){
+//set bar graph output
+$("#Graph #Bar").click(function(req,res) {
+		$("#Graph #Line").removeAttr('class', "on")
+		$("#Graph #Line").attr('class', "off")
+		$("#Graph #Bar").attr('class', "on")
+		//call create graph function(dummy image right now)
 		$("#graphPic").attr('src',"https://www.mathsisfun.com/data/images/bar-graph-fruit.svg");
-	}
-	else{
-		$("#graphPic").attr('src', "https://www.smartsheet.com/sites/default/files/ic-line-charts-excel-single-line-graph-created.png");
-	}
+});
+
+//set line graph output
+$("#Graph #Line").click(function(req,res) {
+	$("#Graph #Bar").removeAttr('class', "on")
+	$("#Graph #Bar").attr('class', "off")
+	$("#Graph #Line").attr('class', "on")
+	//call create graph function(dummy image right now)
+	$("#graphPic").attr('src', "https://www.smartsheet.com/sites/default/files/ic-line-charts-excel-single-line-graph-created.png");
+});
+
+//set day graph output
+$("#Timeline #Day").click(function(req,res) {
+		$("#Timeline #Week").removeAttr('class', "on")
+		$("#Timeline #Month").removeAttr('class', "on")
+		$("#Timeline #Week").attr('class', "off")
+		$("#Timeline #Month").attr('class', "off")
+		$("#Timeline #Day").attr('class', "on")
+		//call create graph function
 
 });
 
+//set week graph output
+$("#Timeline #Week").click(function(req,res) {
+		$("#Timeline #Day").removeAttr('class', "on")
+		$("#Timeline #Month").removeAttr('class', "on")
+		$("#Timeline #Day").attr('class', "off")
+		$("#Timeline #Month").attr('class', "off")
+		$("#Timeline #Week").attr('class', "on")
+		//call create graph function
+
+});
+
+//set month graph output
+$("#Timeline #Month").click(function(req,res) {
+		$("#Timeline #Day").removeAttr('class', "on")
+		$("#Timeline #Week").removeAttr('class', "on")
+		$("#Timeline #Day").attr('class', "off")
+		$("#Timeline #Week").attr('class', "off")
+		$("#Timeline #Month").attr('class', "on")
+		//call create graph function
+
+});
+
+
+
+//later create graph function
