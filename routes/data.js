@@ -4,6 +4,7 @@
 var act = require('../public/activities.json');
 
 exports.view = function(req, res){
-	res.render('data', act);
+		res.render('data', act);
+
 };
 

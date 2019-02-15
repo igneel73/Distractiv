@@ -1,3 +1,15 @@
+/*var newAct = require("../public/activities.json");
+
+$("#Start #startButton").click(function(e){
+	console.log("help");
+	var newActivity = {
+		"name": $(".text-center #inAct").val()	
+	}
+	console.log(newActivity)
+	newAct.activity.push(newActivity);
+});*/
+
+
 // vars for time
 var mins = 0;
 var hrs = 0;

@@ -1,5 +1,3 @@
-
-
 // vars for time
 var secs = 0;
 var mins = 0;

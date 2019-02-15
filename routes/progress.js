@@ -6,14 +6,13 @@ var data = require("../public/data.json");
 var newAct = require("../public/activities.json")
 
 exports.view = function(req, res){
-	console.log("here");
-	console.log("hereagain");
 
-	var newActivity = {
-		"name": "hi"//$(".text-center #inAct").text()	
+	//console.log(x);
+	/*var newActivity = {
+		"name": $(".text-center #inAct").val()	
 	}
 	console.log(newActivity)
-	newAct.activity.push(newActivity);
+	newAct.activity.push(newActivity);*/
 
 	res.render('progress',data);
 };

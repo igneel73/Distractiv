@@ -67,7 +67,15 @@
 		<div>
 			<a href="#"><img id="graphPic" src="https://www.mathsisfun.com/data/images/bar-graph-fruit.svg" class="graph"</a>
 		</div>
+	</div>
+		<div class="text-align: left">
+			<p>Most Recent</p>
+			{{#each distraction}}
+				<h6><small>Activity: {{name}} -- Distraction Count: {{amount}} -- Most Common: {{mostCommon}}</small></h6>
+   			{{/each}}
+		</div>
 
+	<div class="text-center">
 		<!--Activity and Navigation Button-->		
 		<div class="nav-pane fixed-bottom row pt-2">
 			<a href="/home" class="nav-button col-6 border p-2">
