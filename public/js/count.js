@@ -114,51 +114,43 @@ $("#Type .dropdown .dropdown-menu li").click(function(e) {
 
 //set bar graph output
 $("#Graph #Bar").click(function(e) {
-		$("#Graph #Line").removeAttr('class', "on")
-		$("#Graph #Line").attr('class', "off")
-		$("#Graph #Bar").attr('class', "on")
+		$("#Graph #Line").attr('class', "btnOff")
+		$("#Graph #Bar").attr('class', "btnOn")
 		//call create graph function(dummy image right now)
 		$("#graphPic").attr('src',"https://www.mathsisfun.com/data/images/bar-graph-fruit.svg");
 });
 
 //set line graph output
 $("#Graph #Line").click(function(e) {
-	$("#Graph #Bar").removeAttr('class', "on")
-	$("#Graph #Bar").attr('class', "off")
-	$("#Graph #Line").attr('class', "on")
+	$("#Graph #Bar").attr('class', "btnOff")
+	$("#Graph #Line").attr('class', "btnOn")
 	//call create graph function(dummy image right now)
 	$("#graphPic").attr('src', "https://www.smartsheet.com/sites/default/files/ic-line-charts-excel-single-line-graph-created.png");
 });
 
 //set day graph output
 $("#Timeline #Day").click(function(e) {
-		$("#Timeline #Week").removeAttr('class', "on")
-		$("#Timeline #Month").removeAttr('class', "on")
-		$("#Timeline #Week").attr('class', "off")
-		$("#Timeline #Month").attr('class', "off")
-		$("#Timeline #Day").attr('class', "on")
+		$("#Timeline #Week").attr('class', "btnOff")
+		$("#Timeline #Month").attr('class', "btnOff")
+		$("#Timeline #Day").attr('class', "btnOn")
 		//call create graph function
 
 });
 
 //set week graph output
 $("#Timeline #Week").click(function(e) {
-		$("#Timeline #Day").removeAttr('class', "on")
-		$("#Timeline #Month").removeAttr('class', "on")
-		$("#Timeline #Day").attr('class', "off")
-		$("#Timeline #Month").attr('class', "off")
-		$("#Timeline #Week").attr('class', "on")
+		$("#Timeline #Day").attr('class', "btnOff")
+		$("#Timeline #Month").attr('class', "btnOff")
+		$("#Timeline #Week").attr('class', "btnOn")
 		//call create graph function
 
 });
 
 //set month graph output
 $("#Timeline #Month").click(function(e) {
-		$("#Timeline #Day").removeAttr('class', "on")
-		$("#Timeline #Week").removeAttr('class', "on")
-		$("#Timeline #Day").attr('class', "off")
-		$("#Timeline #Week").attr('class', "off")
-		$("#Timeline #Month").attr('class', "on")
+		$("#Timeline #Day").attr('class', "btnOff")
+		$("#Timeline #Week").attr('class', "btnOff")
+		$("#Timeline #Month").attr('class', "btnOn")
 		//call create graph function
 
 });

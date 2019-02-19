@@ -62,9 +62,31 @@
 			<a href="#" class="pause border rounded mr-4 py-3 px-5 col-10">
 				Pause
 			</a>
-			<a href="/home" class="border rounded py-3 px-3 col-2">
+
+
+		<!-- modal for end -->
+		<button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#endModal">
+		  End
+		</button>
+
+		<!-- modal content -->
+		<div class="modal fade" id="endModal" tabindex="-1">
+		  <div class="modal-dialog modal-dialog-centered">
+		    <div class="modal-content">
+		      <div class="modal-body">
+		        Have you successfully completed your activity?
+		      </div>
+		      <div>
+		        <button type="button" class="btn btn-danger" data-dismiss="modal">Not Completed</button>
+		        <button type="button" class="btn btn-success" onclick="location.href='/data'">Activity Completed</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+			<!--<a href="/home" class="border rounded py-3 px-3 col-2">
 				End
-			</a>
+			</a>-->
 		</div>
 
 		
