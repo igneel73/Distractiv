@@ -1,3 +1,42 @@
+{
+	"users": 
+	[
+		{
+			"name" : "Kush",
+			"pass" : "Quahog",
+			"mail" : "igneel.kush73@gmail.com",
+			"activities": 
+			[
+				{
+					"name": "Math",
+					"instances" : 
+					[
+						{
+							"date": "",
+							"duration" : "",
+							"distractions": 
+							[
+								{
+									"type": "Facebook",
+									"count": 3
+								}
+							],
+							"mostCommon" : "Facebook"
+						}
+					]
+				}
+			]
+		}
+	]
+}
+
+
+
+
+
+
+
+/*
 
 {
 	"activity": [
@@ -21,3 +60,4 @@
 			}			
 	]
 }
+*/
