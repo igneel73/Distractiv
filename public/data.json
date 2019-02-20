@@ -1,5 +1,14 @@
 {
 	"activity-name": "Not Specified",
 	"hours" : "00",
-	"mins" : "00"
+	"mins" : "00",
+	"active-user" : "",
+	"date": "",
+	"duration": "",
+	"distractions":
+	[
+		
+	],
+	"mostCommon" : ""
+
 }
