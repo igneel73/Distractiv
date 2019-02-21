@@ -15,12 +15,44 @@
 	<link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
-	<div class=" text-center">
-		<h4 class="screen-heading center-align p-3 m-0 shadow-md">
-			In Progress
+	<!--<div>
+		<h4 class="screen-heading center-align p-3 m-0 shadow-md text-center">
+			In Progress		
+				<span style="font-size: 17px;float: right">
+						modal for help
+						<a href="#" data-toggle="modal" data-target="#helpModal">
+				  		<i class="fas fa-info-circle"></i></a>
+				</span>
 		</h4>
+	</div>-->
+	<div>
+		<h4 class="screen-heading p-3 m-0 shadow-md center-align text-center">
+			In Progress		
+				<span style="font-size: 17px;float: right">
+						<!--modal for help-->
+						<a href="#" data-toggle="modal" data-target="#helpModal">
+				  		<i class="fas fa-info-circle"></i></a>
+				</span>
+		</h4>
+	</div>
 
+
+	<div class="text-center">
 		<hr class="m-0">
+
+				<!-- help modal content -->
+				<div class="modal fade" id="helpModal" tabindex="-1">
+				  <div class="modal-dialog modal-dialog-centered">
+				    <div class="modal-content">
+				      <div class="modal-body">
+				        <p>User Process</p>
+				        <p>How do I start an activity?</p>
+				        <p>How do I end an activity?</p>
+				        <p>How do I see my activity data?</p>
+				      </div>
+				    </div>
+				  </div>
+				</div>		
 
 		<h5 class="prompt pb-1 pt-4 mb-4">
 			{{activity_name}}
@@ -67,29 +99,30 @@
 			</a>
 
 
-		<!-- modal for end -->
-		<button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#endModal">
-		  End
-		</button>
+			<!-- modal for end -->
+			<button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#endModal">
+			  End
+			</button>
 
-		<!-- modal content -->
-		<div class="modal fade" id="endModal" tabindex="-1">
-		  <div class="modal-dialog modal-dialog-centered">
-		    <div class="modal-content">
-		      <div class="modal-body">
-		        Have you successfully completed your activity?
-		      </div>
-		      <div>
-		        <button type="button" class="btn btn-danger" data-dismiss="modal">Not Completed</button>
-		        <button type="button" class="btn btn-success" onclick="location.href='/data'">Activity Completed</button>
-		      </div>
-		    </div>
-		  </div>
-		</div>
+			<!-- modal content -->
+			<div class="modal fade" id="endModal" tabindex="-1">
+			  <div class="modal-dialog modal-dialog-centered">
+			    <div class="modal-content">
+			      <div class="modal-body">
+			      	<p>
+			          <button type="button" class="btn btn-danger" onclick="location.href='/home'">Dismiss Activity</button>
+			    	</p>
+			      	<p>
+			          <button type="button" class="btn btn-light" data-dismiss="modal">Continue Activity</button>
+			    	</p>
+			    	<p>
+			          <button type="button" class="btn btn-success" onclick="location.href='/data'">Activity Completed</button>
+			    	</p>
+			      </div>
+			    </div>
+			  </div>
+			</div>
 
-			<!--<a href="/home" class="border rounded py-3 px-3 col-2">
-				End
-			</a>-->
 		</div>
 
 		
