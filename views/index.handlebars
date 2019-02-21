@@ -24,8 +24,15 @@
 		<h6 class="prompt pb-1 pt-4">
 			Enter Activity Type <span style="color: red">*</span>
 		</h6>
-		<input name="act-type" class="act-type p-2 rounded" placeholder="Eg. Study" id="inAct" method="get">
+		<input name="act-type" class="act-type p-2 rounded" placeholder="Eg. Study" id="inAct" list="acts">
 		</input>
+
+		<datalist id="acts">
+			<option>lolol</option>
+			{{#each activities}}
+			<option>{{name}}</option>
+			{{/each}}
+		</datalist>
 
 		<div class="clock-placeholder my-5">
 			

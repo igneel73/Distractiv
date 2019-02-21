@@ -1,11 +1,19 @@
 var data = require("../public/data.json");
 var fs = require("fs");
+var acts = require("../public/activities.json");
 /*
  * GET home page.
  */
 
 exports.view = function(req, res){
-  res.render('index');
+	var name = data.active_user;
+	console.log(`name is ${name}`);
+	for(let val of acts.users){
+		if(val.name == name){
+			var actData = val;
+		}
+	} 
+  	res.render('index', actData);
 }
 
 exports.next = function(req, res){
