@@ -2,7 +2,17 @@
 var secs = 0;
 var mins = 0;
 var hrs = 0;
+var timeset = true;
 
+$(document).ready(function(e){
+	secs = parseInt($("#secs").text());
+	mins = parseInt($("#mins").text());
+	hrs = parseInt($("#hours").text());
+	if(secs==0 && mins==0 && hrs==0) {
+		$(".time-elap").text("Time Elapsed");
+		timeset = false;
+	}
+});
 // hide popup at the start
 // start the clock too
 $(".pop-up").hide();
@@ -55,16 +65,35 @@ function tick(){
 	mins = parseInt($("#mins").text());
 	hrs = parseInt($("#hours").text());
 
-	// check if 1 minute has passed
-	if(secs==60){
-		mins++;
-		secs = 0;
-	}
-	else if(mins==60){
-		hrs++;
-		mins = 0;
+	if(!timeset) {
+		// check if 1 minute has passed
+		if(secs==60){
+			mins++;
+			secs = 0;
+		}
+		else if(mins==60){
+			hrs++;
+			mins = 0;
+		} else {
+			secs++;
+		}
 	} else {
-		secs++;
+
+		if(secs==0){
+			if(mins != 0){
+				mins--;
+				secs = 59;
+			} else if(hrs!=0){
+				mins = 59;
+				secs = 59;
+				hrs--;
+			} else{
+				clearInterval(clock);
+
+			}
+		} else {
+			secs--;
+		}
 	}
 
 	// format with 0 and update display
@@ -114,51 +143,43 @@ $("#Type .dropdown .dropdown-menu li").click(function(e) {
 
 //set bar graph output
 $("#Graph #Bar").click(function(e) {
-		$("#Graph #Line").removeAttr('class', "on")
-		$("#Graph #Line").attr('class', "off")
-		$("#Graph #Bar").attr('class', "on")
+		$("#Graph #Line").attr('class', "btnOff")
+		$("#Graph #Bar").attr('class', "btnOn")
 		//call create graph function(dummy image right now)
 		$("#graphPic").attr('src',"https://www.mathsisfun.com/data/images/bar-graph-fruit.svg");
 });
 
 //set line graph output
 $("#Graph #Line").click(function(e) {
-	$("#Graph #Bar").removeAttr('class', "on")
-	$("#Graph #Bar").attr('class', "off")
-	$("#Graph #Line").attr('class', "on")
+	$("#Graph #Bar").attr('class', "btnOff")
+	$("#Graph #Line").attr('class', "btnOn")
 	//call create graph function(dummy image right now)
 	$("#graphPic").attr('src', "https://www.smartsheet.com/sites/default/files/ic-line-charts-excel-single-line-graph-created.png");
 });
 
 //set day graph output
 $("#Timeline #Day").click(function(e) {
-		$("#Timeline #Week").removeAttr('class', "on")
-		$("#Timeline #Month").removeAttr('class', "on")
-		$("#Timeline #Week").attr('class', "off")
-		$("#Timeline #Month").attr('class', "off")
-		$("#Timeline #Day").attr('class', "on")
+		$("#Timeline #Week").attr('class', "btnOff")
+		$("#Timeline #Month").attr('class', "btnOff")
+		$("#Timeline #Day").attr('class', "btnOn")
 		//call create graph function
 
 });
 
 //set week graph output
 $("#Timeline #Week").click(function(e) {
-		$("#Timeline #Day").removeAttr('class', "on")
-		$("#Timeline #Month").removeAttr('class', "on")
-		$("#Timeline #Day").attr('class', "off")
-		$("#Timeline #Month").attr('class', "off")
-		$("#Timeline #Week").attr('class', "on")
+		$("#Timeline #Day").attr('class', "btnOff")
+		$("#Timeline #Month").attr('class', "btnOff")
+		$("#Timeline #Week").attr('class', "btnOn")
 		//call create graph function
 
 });
 
 //set month graph output
 $("#Timeline #Month").click(function(e) {
-		$("#Timeline #Day").removeAttr('class', "on")
-		$("#Timeline #Week").removeAttr('class', "on")
-		$("#Timeline #Day").attr('class', "off")
-		$("#Timeline #Week").attr('class', "off")
-		$("#Timeline #Month").attr('class', "on")
+		$("#Timeline #Day").attr('class', "btnOff")
+		$("#Timeline #Week").attr('class', "btnOff")
+		$("#Timeline #Month").attr('class', "btnOn")
 		//call create graph function
 
 });

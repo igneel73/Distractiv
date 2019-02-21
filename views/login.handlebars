@@ -5,11 +5,16 @@
 	<title>Login</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="/css/home.css">
+	{{> facebook}}
+	<script src="/js/facebook.js"></script>
 </head>
 <body>
 	<div class="text-center">
@@ -20,22 +25,23 @@
 
 		<form class="login p-5 my-5" action="./home" method="get">
 			<h5 class="m-2">Login To Existing Account</h5>
-			<input class="p-1 mx-3 my-2" type="text" name="user" placeholder="User Name">
+			<input id="log-name" class="p-1 mx-3 my-2" type="text" name="user" placeholder="User Name">
 			<input class="p-1 mx-3 my-2" type="password" name="pass" placeholder="Password"> 
-			<input class="m-3 px-2" type="submit" name="login" value="Login">
+			<input id="log" class="m-3 px-2" type="submit" name="login" value="Login">
 			<input class="signup-btn m-3 px-2" type="button" name="signup" value="Sign Up">
 		</form> 
 		<form class="signup p-5 my-5" action="./home" method="get">
 			<h5 class="m-2">Create An Account</h5>
 			<input class="p-1 mx-3 my-2" type="email" name="email" placeholder="example@email.com">
-			<input class="p-1 mx-3 my-2" type="text" name="user" placeholder="User Name">
+			<input id="sig-name" class="p-1 mx-3 my-2" type="text" name="user" placeholder="User Name">
 			<input class="p-1 mx-3 my-2" type="password" name="pass" placeholder="Password"> 
-			<input class="m-3 px-2" type="submit" name="signup" value="Sign Up">
+			<input id="sig" class="m-3 px-2" type="submit" name="signup" value="Sign Up">
 			<input class="login-btn m-3 px-2" type="button" name="login" value="Login">
 		</form>
 
-		<div class="social logins">
-			
+		<div class="social-login">
+			<fb:login-button button-type="continue_with" size="large" scope="public_profile,email" onlogin="checkLoginState();">
+			</fb:login-button>
 		</div>
 
 	</div>

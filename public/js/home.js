@@ -14,6 +14,18 @@ $("#Start #startButton").click(function(e){
 var mins = 0;
 var hrs = 0;
 
+$("#startButton").click(function(e){
+	e.preventDefault();
+	var name = $("#inAct").val();
+	var hrs = $("#hours").text();
+	var mins = $("#mins").text();
+	console.log(name);
+	$.get("/home/" + name + "/" + hrs + "/" + mins, redirect);
+});
+
+function redirect(result){
+	window.location.href = "/start";
+} 
 
 $("a.time-btns").hide();
 
