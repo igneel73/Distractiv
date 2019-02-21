@@ -1,3 +1,4 @@
+
 function checkLoginState() {
   FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
@@ -18,6 +19,10 @@ function statusChangeCallback(response) {
   }
 }
 
-function  changeUser(response) {
-  
+function changeUser(response) {
+  $.get("/" + response.name, redirect);
 }
+
+function redirect(result){
+  window.location.href = "/home";
+} 

@@ -1,3 +1,4 @@
+'use strict';
 
 $(document).ready(function(e){
 	$(".signup").hide();
@@ -14,3 +15,21 @@ $(".login-btn").click(function(e){
 	$(".signup").hide();
 	$(".login").show();
 });
+
+$("#log").click(function(e){
+	e.preventDefault();
+	var name = $("#log-name").val();
+	console.log(name);
+	$.get("/" + name, redirect);
+});
+
+$("#sig").click(function(e){
+	e.preventDefault();
+	var name = $("#sig-name").val();
+	console.log(name);
+	$.get("/" + name, redirect);
+});
+
+function redirect(result){
+	window.location.href = "/home";
+} 

@@ -29,35 +29,3 @@
 		}
 	]
 }
-
-
-
-
-
-
-
-/*
-
-{
-	"activity": [
-			{"name" : "Math"},			
-			{"name" : "Science"},
-			{"name" : "Gym"},			
-			{"name" : "Read"}			
-	],
-	"distraction": [
-			{"name" : "Math",			
-			 "amount" : "7",
-			 "mostCommon" : "Facebook"
-			},
-			{"name" : "Science",			
-			 "amount" : "9",
-			 "mostCommon" : "Youtube"
-			},	
-			{"name" : "Gym",			
-			 "amount" : "2",
-			 "mostCommon" : "Texting"
-			}			
-	]
-}
-*/

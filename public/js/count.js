@@ -2,7 +2,17 @@
 var secs = 0;
 var mins = 0;
 var hrs = 0;
+var timeset = true;
 
+$(document).ready(function(e){
+	secs = parseInt($("#secs").text());
+	mins = parseInt($("#mins").text());
+	hrs = parseInt($("#hours").text());
+	if(secs==0 && mins==0 && hrs==0) {
+		$(".time-elap").text("Time Elapsed");
+		timeset = false;
+	}
+});
 // hide popup at the start
 // start the clock too
 $(".pop-up").hide();
@@ -55,16 +65,35 @@ function tick(){
 	mins = parseInt($("#mins").text());
 	hrs = parseInt($("#hours").text());
 
-	// check if 1 minute has passed
-	if(secs==60){
-		mins++;
-		secs = 0;
-	}
-	else if(mins==60){
-		hrs++;
-		mins = 0;
+	if(!timeset) {
+		// check if 1 minute has passed
+		if(secs==60){
+			mins++;
+			secs = 0;
+		}
+		else if(mins==60){
+			hrs++;
+			mins = 0;
+		} else {
+			secs++;
+		}
 	} else {
-		secs++;
+
+		if(secs==0){
+			if(mins != 0){
+				mins--;
+				secs = 59;
+			} else if(hrs!=0){
+				mins = 59;
+				secs = 59;
+				hrs--;
+			} else{
+				clearInterval(clock);
+
+			}
+		} else {
+			secs--;
+		}
 	}
 
 	// format with 0 and update display
