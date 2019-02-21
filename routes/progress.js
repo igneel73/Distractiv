@@ -3,7 +3,6 @@
  */
 
 var data = require("../public/data.json");
-var newAct = require("../public/activities.json")
 
 exports.view = function(req, res){
 
@@ -15,5 +14,5 @@ exports.view = function(req, res){
 	newAct.activity.push(newActivity);*/
 
 	res.render('progress',data);
-};
+}
 
