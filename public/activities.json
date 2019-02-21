@@ -24,6 +24,42 @@
 							"mostCommon" : "Facebook"
 						}
 					]
+				},
+				{
+					"name": "Science",
+					"instances" : 
+					[
+						{
+							"date": "",
+							"duration" : "",
+							"distractions": 
+							[
+								{
+									"type": "Youtube",
+									"count": "3"
+								}
+							],
+							"mostCommon" : "Youtube"
+						}
+					]
+				},
+				{
+					"name": "Essay",
+					"instances" : 
+					[
+						{
+							"date": "",
+							"duration" : "",
+							"distractions": 
+							[
+								{
+									"type": "Friends",
+									"count": "3"
+								}
+							],
+							"mostCommon" : "Friends"
+						}
+					]
 				}
 			]
 		}
