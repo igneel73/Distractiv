@@ -64,10 +64,62 @@
 	</div>
 
 	<div class="text-center">
-		<div>
-			<a href="#"><img id="graphPic" src="https://www.mathsisfun.com/data/images/bar-graph-fruit.svg" class="graph"</a>
+		<div id="dataGraph">
+			<a href="#" data-toggle="modal" data-target="#dayData"><img id="graphPic" src="https://www.mathsisfun.com/data/images/bar-graph-fruit.svg" class="graph bar day"></a>
 		</div>
 	</div>
+
+				<!-- help modal content -->
+				<div class="modal fade" id="here" tabindex="-1">
+					<div class="modal-dialog modal-dialog-centered">
+				    <div class="modal-content">
+				      <div class="modal-body">
+				        <p>User Process</p>
+				        <p>How do I start an activity?</p>
+				        <p>How do I end an activity?</p>
+				        <p>How do I see my activity data?</p>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+
+				<!-- day data modal content -->
+				<div class="modal fade" id="dayData" tabindex="-1">
+					<div class="modal-dialog modal-dialog-centered">
+				    <div class="modal-content">
+				      <div class="modal-body">
+				        <p>Day data</p>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+
+				<!-- week data modal content -->
+				<div class="modal fade" id="weekData" tabindex="-1">
+					<div class="modal-dialog modal-dialog-centered">
+				    <div class="modal-content">
+				      <div class="modal-body">
+				        <p>Week data</p>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+
+				<!-- help modal content -->
+				<div class="modal fade" id="monthData" tabindex="-1">
+					<div class="modal-dialog modal-dialog-centered">
+				    <div class="modal-content">
+				      <div class="modal-body">
+				        <p>Month data</p>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+
+
+
+
+
 		<div class="text-align: left">
 			<p>Most Recent</p>
 			{{#each distraction}}
