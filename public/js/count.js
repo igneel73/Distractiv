@@ -45,7 +45,10 @@ $(".cancel").click(function(e){
 	// hide the popup
 	$(".pop-up").hide();
 	pause();
-})
+	let count = parseInt($(".dist-num .num").text());
+	count--;
+	$(".dist-num .num").text(count);
+});
 
 function pause(e) {
 	var text = $(".pause").text();
