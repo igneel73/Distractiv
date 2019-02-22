@@ -29,6 +29,11 @@
 		<h4 class="screen-heading p-3 m-0 shadow-md center-align text-center">
 			In Progress		
 		</h4>
+		<span id="help" style="font-size: 17px;">
+					<!--modal for help-->
+					<a href="#" data-toggle="modal" data-target="#helpModal">
+			  		<i class="fas fa-info-circle"></i></a>
+		</span>
 	</div>
 
 
@@ -53,6 +58,22 @@
 			<a href="#" class="ok px-2 py-2 m-2 border">Ok</a>
 			<a href="#" class="cancel px-1 py-2 m-2 border">Cancel</a>
 		</div>
+
+		<!-- help modal content -->
+		<div class="modal fade" id="helpModal" tabindex="-1">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-body">
+				        <h6 class="py-3">How Do I Start An Activity?</h6>
+				        <ol class="text-left">
+				        	<li class="px-2 py-1">Input the activity type.</li>
+				        	<li class="px-2 py-1">Use the dropdowns to set the time, or choose to focus for an unspecified amount of time.</li>
+				        	<li class="px-2 py-1">Press Start!</li>
+				        </ol>
+				      </div>
+				    </div>
+				  </div>
+				</div>	
 	
 		<!--Distracted Button-->
 		<a href="#" class="dist px-4 py-2 mx-5 mt-3 border rounded distracted">
@@ -95,7 +116,7 @@
 			          <button type="button" class="btn btn-danger" onclick="location.href='/home'">Dismiss Activity</button>
 			    	</p>
 			      	<p>
-			          <button type="button" class="btn btn-light" data-dismiss="modal">Continue Activity</button>
+			          <button type="button" class="btn btn-secondary" data-dismiss="modal">Continue Activity</button>
 			    	</p>
 			    	<p>
 			          <button type="button" class="btn btn-success" onclick="location.href='/data'">Activity Completed</button>
