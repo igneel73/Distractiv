@@ -28,31 +28,12 @@
 	<div>
 		<h4 class="screen-heading p-3 m-0 shadow-md center-align text-center">
 			In Progress		
-				<span style="font-size: 17px;float: right">
-						<!--modal for help-->
-						<a href="#" data-toggle="modal" data-target="#helpModal">
-				  		<i class="fas fa-info-circle"></i></a>
-				</span>
 		</h4>
 	</div>
 
 
 	<div class="text-center">
-		<hr class="m-0">
-
-				<!-- help modal content -->
-				<div class="modal fade" id="helpModal" tabindex="-1">
-				  <div class="modal-dialog modal-dialog-centered">
-				    <div class="modal-content">
-				      <div class="modal-body">
-				        <p>User Process</p>
-				        <p>How do I start an activity?</p>
-				        <p>How do I end an activity?</p>
-				        <p>How do I see my activity data?</p>
-				      </div>
-				    </div>
-				  </div>
-				</div>		
+		<hr class="m-0">	
 
 		<h5 class="prompt pb-1 pt-4 mb-4">
 			{{activity_name}}
@@ -78,7 +59,7 @@
 			Distracted?
 		</a>
 
-		<div class="clock-motion border my-3 mx-5">
+		<div class="clock-motion my-3 mx-5">
 			<div class="time-num p-4">
 				<span id="hours">{{hours}}</span> : <span id="mins">{{mins}}</span> : <span id="secs">00</span>
 			</div>
@@ -103,6 +84,7 @@
 			<button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#endModal">
 			  End
 			</button>
+		</div>
 
 			<!-- modal content -->
 			<div class="modal fade" id="endModal" tabindex="-1">
@@ -122,9 +104,6 @@
 			    </div>
 			  </div>
 			</div>
-
-		</div>
-
 		
 
 	</div>

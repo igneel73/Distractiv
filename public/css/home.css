@@ -35,6 +35,19 @@ a:hover {
 	color: black;
 }
 
+#hours{
+	display: inline;
+	width: auto;
+}
+#secs{
+	display: inline;
+}
+#mins{
+	display: inline;
+}
+
+
+
 .bar{
 
 }
@@ -109,42 +122,45 @@ a:hover {
 
 /* progress screen */
 
+#help{
+	position: absolute;
+	right: 1rem;
+	top: 1.30rem;
+}
+
 .clock-motion {
 	box-sizing: border-box;
 	position: relative;
-	top: 20px;
-	border-radius: 50%;
-	width: 77.5%;
-	padding-top: 77.5%;
+	top: 60px;
 }
 
 .time-num {
-	position: absolute;
-	top:30%;
-	left:0;
-	bottom: 0;
-	right: 0;
+	display: relative;
+	top: 40px;
 	font-size: 35px;
 }
 
 .time-elap {
-	position: absolute;
-	top:55%;
-	left:0;
-	bottom: 0;
-	right: 0;
+	display: relative;
+	top: 10px;
 }
 
 .dist-num {
 	font-size: 20px;
 	background-color: #efefef;
-	position: relative;
-	top: 40px;
+	position: absolute;
+	bottom: 160px;
+	left: 0;
+	right: 0;
+	margin: auto;
 }
 
 .act-btn {
-	position: relative;
-	top: 50px;
+	position: absolute;
+	bottom: 20px;
+	left: 0;
+	right: 0;
+	margin: auto;
 }
 
 .pop-up {
