@@ -167,7 +167,9 @@ a:hover {
 	display: block;
 	position: absolute;
 	top: 5rem;
-	left: 3rem;
+	left: 0;
+	right: 0;
+	margin: auto;
 	z-index: 100;
 	background-color: #efefef;
 }
