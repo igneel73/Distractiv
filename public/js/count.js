@@ -3,6 +3,9 @@ var secs = 0;
 var mins = 0;
 var hrs = 0;
 var timeset = true;
+var selected = 0;
+var preset = ["Facebook", "Instagram", "Twitter", "Reddit"];
+var distractions = [];
 
 $(document).ready(function(e){
 	secs = parseInt($("#secs").text());
@@ -18,37 +21,8 @@ $(document).ready(function(e){
 $(".pop-up").hide();
 
 var clock = setInterval(tick, 1000);
-var clockanim = setInterval(anim, 250);
-
-// increase distraction counter by one
-$(".distracted").click(function(e) {
-	var count = parseInt($(".dist-num .num").text());
-	count+= 1;
-	$(".dist-num .num").text(count);
-	$(".pop-up").show();
-	pause();
-
-});
-
 
 $(".pause").click(pause);
-
-$(".ok").click(function(e){
-	// save the entry
-	// hide the popup
-	$(".pop-up").hide();
-	pause();
-});
-
-$(".cancel").click(function(e){
-	// don't save the entry
-	// hide the popup
-	$(".pop-up").hide();
-	pause();
-	let count = parseInt($(".dist-num .num").text());
-	count--;
-	$(".dist-num .num").text(count);
-});
 
 function pause(e) {
 	var text = $(".pause").text();
@@ -120,11 +94,69 @@ function tick(){
 
 }
 
-// animate clock
-function anim(){
+// distraction functionality
 
-	var clock = $(".clock-motion");
-	
+// increase distraction counter by one
+$(".distracted").click(function(e) {
+	var count = parseInt($(".dist-num .num").text());
+	count+= 1;
+	$(".dist-num .num").text(count);
+	$(".pop-up").show();
+	pause();
+
+});
+
+$(".ok").click(function(e){
+	// save the entry
+	let dist = "";
+	if($(".dist-type").val() != ""){
+		dist = $(".dist-type").val();
+		$(".dist-type").val("");
+	} else {
+		dist = preset[selected-1];
+	}
+
+	$.get("/save/"+ dist, donothing);
+
+	// clear the selected color
+	for(let i = 1; i < 5; i++){
+		$(`#${i}.icon`).css("color", "black");
+	}
+	// hide the popup
+	$(".pop-up").hide();
+	pause();
+});
+
+
+function donothing(result){
+	// do nothing
 }
+
+$(".cancel").click(function(e){
+	// don't save the entry
+	// clear the selected color and input
+	for(let i = 1; i < 5; i++){
+		$(`#${i}.icon`).css("color", "black");
+	}
+	$(".dist-type").val("");
+	// hide the popup
+	$(".pop-up").hide();
+	pause();
+	let count = parseInt($(".dist-num .num").text());
+	count--;
+	$(".dist-num .num").text(count);
+});
+
+$(".icon").click( function(e){
+	for(let i = 1; i < 5; i++){
+		if($(this).attr('id') == i){
+			$(this).css("color", "#646FFF");
+			selected = i;
+		} else {
+			$(`#${i}.icon`).css("color", "black");
+		}
+	}
+});
+
 
 

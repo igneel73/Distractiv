@@ -3,16 +3,20 @@
  */
 
 var data = require("../public/data.json");
+var fs = require("fs");
+var acts = require("../public/activities.json");
 
 exports.view = function(req, res){
+	res.render('progress', data);
+}
 
-	//console.log(x);
-	/*var newActivity = {
-		"name": $(".text-center #inAct").val()	
+exports.save = function (req, res){
+	var dist = req.params.dist;
+	data.distractions.push(dist);
+	if((typeof data)==='object') {
+		var write = JSON.stringify(data, null, 2);
 	}
-	console.log(newActivity)
-	newAct.activity.push(newActivity);*/
-
-	res.render('progress',data);
+	fs.writeFileSync('./public/data.json', write);
+	res.json(data);
 }
 

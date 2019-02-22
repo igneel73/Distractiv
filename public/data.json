@@ -1,10 +1,13 @@
 {
-  "activity_name": "Science",
+  "activity_name": "Whateva",
   "hours": "00",
   "mins": "00",
   "active_user": "Kush",
-  "date": "2019-02-22T00:29:12.036Z",
+  "date": "2019-02-22T02:03:22.997Z",
   "duration": "",
-  "distractions": [],
+  "distractions": [
+    "Twitter",
+    "Nothing LOLOLOL"
+  ],
   "mostCommon": ""
 }

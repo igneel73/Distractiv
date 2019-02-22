@@ -44,6 +44,7 @@ app.get('/start', progress.view);
 app.get('/data', data.view);
 app.get('/:name', login.log);
 app.get('/home/:name/:hrs/:mins', index.next);
+app.get('/save/:dist', progress.save);
 // Example route
 // app.get('/users', user.list);
 
