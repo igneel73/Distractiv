@@ -17,8 +17,8 @@ var hrs = 0;
 $("#startButton").click(function(e){
 	e.preventDefault();
 	var name = $("#inAct").val();
-	var hrs = $("#hours").text();
-	var mins = $("#mins").text();
+	var hrs = $("#hours").val();
+	var mins = $("#mins").val();
 	console.log(name);
 	$.get("/home/" + name + "/" + hrs + "/" + mins, redirect);
 });
@@ -27,22 +27,7 @@ function redirect(result){
 	window.location.href = "/start";
 } 
 
-$("a.time-btns").hide();
-
-$(".time_prompt").click(function(e) {
-	if($(".time_prompt").text().includes("Set Time")) {
-		$(".time_prompt").text("Cancel");
-		$(".time-btns").show();
-	} else {
-		$(".time_prompt").text("Set Time");
-		$(".time-btns").hide();
-		$("#mins").text("00");
-		$("#hours").text("00");
-		$("#secs").text("00");
-	}
-
-});
-
+/*
 $("#l1").click({num:1}, dec);
 $("#l2").click({num:2}, dec);
 $("#r1").click({num:1}, inc);
@@ -127,3 +112,4 @@ function dec(e){
 	}
 
 }
+*/

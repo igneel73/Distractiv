@@ -3,6 +3,9 @@ var secs = 0;
 var mins = 0;
 var hrs = 0;
 var timeset = true;
+var selected = 0;
+var preset = ["Facebook", "Instagram", "Twitter", "Reddit"];
+var distractions = [];
 
 $(document).ready(function(e){
 	secs = parseInt($("#secs").text());
@@ -18,34 +21,8 @@ $(document).ready(function(e){
 $(".pop-up").hide();
 
 var clock = setInterval(tick, 1000);
-var clockanim = setInterval(anim, 250);
-
-// increase distraction counter by one
-$(".distracted").click(function(e) {
-	var count = parseInt($(".dist-num .num").text());
-	count+= 1;
-	$(".dist-num .num").text(count);
-	$(".pop-up").show();
-	pause();
-
-});
-
 
 $(".pause").click(pause);
-
-$(".ok").click(function(e){
-	// save the entry
-	// hide the popup
-	$(".pop-up").hide();
-	pause();
-});
-
-$(".cancel").click(function(e){
-	// don't save the entry
-	// hide the popup
-	$(".pop-up").hide();
-	pause();
-})
 
 function pause(e) {
 	var text = $(".pause").text();
@@ -117,73 +94,69 @@ function tick(){
 
 }
 
-// animate clock
-function anim(){
+// distraction functionality
 
-	var clock = $(".clock-motion");
-	
+// increase distraction counter by one
+$(".distracted").click(function(e) {
+	var count = parseInt($(".dist-num .num").text());
+	count+= 1;
+	$(".dist-num .num").text(count);
+	$(".pop-up").show();
+	pause();
+
+});
+
+$(".ok").click(function(e){
+	// save the entry
+	let dist = "";
+	if($(".dist-type").val() != ""){
+		dist = $(".dist-type").val();
+		$(".dist-type").val("");
+	} else {
+		dist = preset[selected-1];
+	}
+
+	$.get("/save/"+ dist, donothing);
+
+	// clear the selected color
+	for(let i = 1; i < 5; i++){
+		$(`#${i}.icon`).css("color", "black");
+	}
+	// hide the popup
+	$(".pop-up").hide();
+	pause();
+});
+
+
+function donothing(result){
+	// do nothing
 }
 
-/*dynamically push inputted activity into activity type drop down on data page
-$("#Start #startButton").click(function(e){
-	console.log("hereagain");
-	$(this).text("No");
-	/*var newActivity = {
-		"name": $(".text-center #inAct").text()	
+$(".cancel").click(function(e){
+	// don't save the entry
+	// clear the selected color and input
+	for(let i = 1; i < 5; i++){
+		$(`#${i}.icon`).css("color", "black");
 	}
-	//console.log(newActivity)
-	//newAct.activity.push(newActivity);
-});*/
-
-
-//Change activity type dropdown text to match selected text
-$("#Type .dropdown .dropdown-menu li").click(function(e) {
-	$("#Type .dropdown .btn").text($(this).text());
+	$(".dist-type").val("");
+	// hide the popup
+	$(".pop-up").hide();
+	pause();
+	let count = parseInt($(".dist-num .num").text());
+	count--;
+	$(".dist-num .num").text(count);
 });
 
-//set bar graph output
-$("#Graph #Bar").click(function(e) {
-		$("#Graph #Line").attr('class', "btnOff")
-		$("#Graph #Bar").attr('class', "btnOn")
-		//call create graph function(dummy image right now)
-		$("#graphPic").attr('src',"https://www.mathsisfun.com/data/images/bar-graph-fruit.svg");
-});
-
-//set line graph output
-$("#Graph #Line").click(function(e) {
-	$("#Graph #Bar").attr('class', "btnOff")
-	$("#Graph #Line").attr('class', "btnOn")
-	//call create graph function(dummy image right now)
-	$("#graphPic").attr('src', "https://www.smartsheet.com/sites/default/files/ic-line-charts-excel-single-line-graph-created.png");
-});
-
-//set day graph output
-$("#Timeline #Day").click(function(e) {
-		$("#Timeline #Week").attr('class', "btnOff")
-		$("#Timeline #Month").attr('class', "btnOff")
-		$("#Timeline #Day").attr('class', "btnOn")
-		//call create graph function
-
-});
-
-//set week graph output
-$("#Timeline #Week").click(function(e) {
-		$("#Timeline #Day").attr('class', "btnOff")
-		$("#Timeline #Month").attr('class', "btnOff")
-		$("#Timeline #Week").attr('class', "btnOn")
-		//call create graph function
-
-});
-
-//set month graph output
-$("#Timeline #Month").click(function(e) {
-		$("#Timeline #Day").attr('class', "btnOff")
-		$("#Timeline #Week").attr('class', "btnOff")
-		$("#Timeline #Month").attr('class', "btnOn")
-		//call create graph function
-
+$(".icon").click( function(e){
+	for(let i = 1; i < 5; i++){
+		if($(this).attr('id') == i){
+			$(this).css("color", "#646FFF");
+			selected = i;
+		} else {
+			$(`#${i}.icon`).css("color", "black");
+		}
+	}
 });
 
 
 
-//later create graph function
