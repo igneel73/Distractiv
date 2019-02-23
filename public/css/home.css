@@ -32,7 +32,7 @@ a:hover {
 .start {
 	position: relative;
 	top: 180px;
-	color: black;
+	/*color: black;*/
 }
 
 #hours{

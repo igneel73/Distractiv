@@ -33,8 +33,8 @@
 					<div class="modal-body">
 				        <h6 class="py-3">How Do I Start An Activity?</h6>
 				        <ol class="text-left">
-				        	<li class="px-2 py-1">Input the activity type.</li>
-				        	<li class="px-2 py-1">Use the dropdowns to set the time, or choose to focus for an unspecified amount of time.</li>
+				        	<li class="px-2 py-1">Input the activity type. You can either input a new activity or choose to do another instance of a previously inputted activity.</li>
+				        	<li class="px-2 py-1">Use the dropdowns to set the time. The time chosen through the dropdowns will be a countdown of how long you have to finsih your activity. Alternatively, if you don't set a time, then the time will increment from 0.</li>
 				        	<li class="px-2 py-1">Press Start!</li>
 				        </ol>
 
@@ -87,9 +87,10 @@
 
 		<!--Start Button-->
 		<div id="Start">
-			<a href="/start" class="start p-2 px-4 mx-5 border rounded" id="startButton">
+			<!--<a href="/start" class="start p-2 px-4 mx-5 border rounded" id="startButton">
 				START
-			</a>
+			</a>-->
+			<button type="button" class="start btn btn-success btn-lg" onclick="location.href='/start'">Start</button>
 		</div>
 		
 		<!--Activity and Data Button-->
