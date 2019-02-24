@@ -37,7 +37,10 @@
 				        	<li class="px-2 py-1">Use the dropdowns to set the time. The time chosen through the dropdowns will be a countdown of how long you have to finsih your activity. Alternatively, if you don't set a time, then the time will increment from 0.</li>
 				        	<li class="px-2 py-1">Press Start!</li>
 				        </ol>
-
+						<h6 class="py-3">Time Limit</h6>
+				        <ol class="text-left">
+				        	<li class="px-2 py-1">Because this app is meant for short term activity tracking, there is a 24 hour time limit for an activity.</li>
+				        </ol>
 				        <span style="color: red;">*</span>Required Field
 				      </div>
 				    </div>
@@ -58,6 +61,8 @@
 			{{/each}}
 		</datalist>
 
+
+
 		<div class="clock-placeholder my-5">
 			
 			<div class="time p-3 mt-5">
@@ -66,21 +71,43 @@
 					<option value="00">00</option>
 					<option value="01">01</option>
 					<option value="02">02</option>
-				</select> : 
-				<select class="rounded" id="mins">
-					<option value="00">00</option>
+					<option value="03">03</option>
+					<option value="04">04</option>
 					<option value="05">05</option>
+					<option value="06">06</option>
+					<option value="07">07</option>
+					<option value="08">08</option>
+					<option value="09">09</option>
 					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
 					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="19">19</option>
 					<option value="20">20</option>
-					<option value="25">25</option>
-					<option value="30">30</option>
-					<option value="35">35</option>
-					<option value="40">40</option>
-					<option value="45">45</option>
-					<option value="50">50</option>
-					<option value="55">55</option>
-				</select> 
+					<option value="21">21</option>
+					<option value="22">22</option>
+					<option value="23">23</option>
+					<option value="24">24</option>
+				</select> : 
+					<select class="rounded" id="mins">
+						<option value="00">00</option>
+						<option value="05">05</option>
+						<option value="10">10</option>
+						<option value="15">15</option>
+						<option value="20">20</option>
+						<option value="25">25</option>
+						<option value="30">30</option>
+						<option value="35">35</option>
+						<option value="40">40</option>
+						<option value="45">45</option>
+						<option value="50">50</option>
+						<option value="55">55</option>
+					</select>
 			</div>
 			
 		</div>
@@ -88,9 +115,9 @@
 		<!--Start Button-->
 		<div id="Start">
 			<!--<a href="/start" class="start p-2 px-4 mx-5 border rounded" id="startButton">
-				START
+				START onclick="location.href='/start'"
 			</a>-->
-			<button type="button" class="start btn btn-success btn-lg" onclick="location.href='/start'">Start</button>
+			<button type="button" class="start btn btn-success btn-lg" id="startButton">Start</button>
 		</div>
 		
 		<!--Activity and Data Button-->
