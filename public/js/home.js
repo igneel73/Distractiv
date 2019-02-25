@@ -7,27 +7,30 @@ $("#startButton").click(function(e){
 	var name = $("#inAct").val();
 	var hrs = $("#hours").val();
 	var mins = $("#mins").val();	
-	//max time check
-	/*if(hrs=="24"){
-		var zeroMinutes = '<p>00</p>';
-		$(.html(zeroMinutes);
+	//activity check
+	if(name==""){
+		$("#Start a").attr('data-target', "#inputRequired");
+		console.log("required field");
+		//add popover
 	}
-	else{*/
+	else{
 		$.get("/home/" + name + "/" + hrs + "/" + mins, redirect);
-	//}
+	}
 });
 
 function redirect(result){
 	window.location.href = "/start";
 }
 
+//enable popovers
+
 //24 hour time limit
 $("#hours").change(function(){
-	console.log($(this).val());
+	//console.log($(this).val());
 	if($(this).val()==24){
-		console.log("here");
+		//console.log("here");
 		var zeroMinutes = '<option value="00">00</option>';
-		console.log(zeroMinutes);
+		//console.log(zeroMinutes);
 		$("#mins").html(zeroMinutes);
 	}
 	else{
