@@ -2,6 +2,9 @@
 var secs = 0;
 var mins = 0;
 var hrs = 0;
+var init_secs = 0;
+var init_mins = 0;
+var init_hrs = 0;
 var timeset = true;
 var selected = 0;
 var preset = ["Facebook", "Instagram", "Twitter", "Reddit"];
@@ -11,6 +14,9 @@ $(document).ready(function(e){
 	secs = parseInt($("#secs").text());
 	mins = parseInt($("#mins").text());
 	hrs = parseInt($("#hours").text());
+	init_hrs = hrs;
+	init_mins = mins;
+	init_secs = secs;
 	if(secs==0 && mins==0 && hrs==0) {
 		$(".time-elap").text("Time Elapsed");
 		timeset = false;
@@ -158,5 +164,20 @@ $(".icon").click( function(e){
 	}
 });
 
+$("#complete").click( function(e){
+	// compute duration
+	let duration = "";
 
+	if(!timeset){
+		duration = hrs + ":" + mins + ":" + secs;
+	} else {
 
+		duration = (init_hrs - hrs)+":"+(init_mins - mins)+":"+(init_secs - secs);
+	}
+ 	console.log(duration);
+	$.get("/complete/" + duration , redirect);
+});
+
+function redirect(result) {
+	window.location.href = "/data";
+}

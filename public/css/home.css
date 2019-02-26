@@ -32,7 +32,7 @@ a:hover {
 .start {
 	position: relative;
 	top: 180px;
-	color: black;
+	/*color: black;*/
 }
 
 #hours{
@@ -57,15 +57,15 @@ a:hover {
 
 }
 
-.day{
+.previous{
 
 }
 
-.week{
+.last5{
 
 }
 
-.month{
+.last10{
 	
 }
 
@@ -125,7 +125,7 @@ a:hover {
 #help{
 	position: absolute;
 	right: 1rem;
-	top: 1.30rem;
+	top: 1.18rem;
 }
 
 .clock-motion {

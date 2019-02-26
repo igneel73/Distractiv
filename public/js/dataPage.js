@@ -28,38 +28,38 @@ $("#Graph #Line").click(function(e) {
 });
 
 //set day graph output
-$("#Timeline #Day").click(function(e) {
-		$("#Timeline #Week").attr('class', "btnOff")
-		$("#Timeline #Month").attr('class', "btnOff")
-		$("#Timeline #Day").attr('class', "btnOn")
+$("#Timeline #Previous").click(function(e) {
+		$("#Timeline #Last5").attr('class', "btnOff")
+		$("#Timeline #Last10").attr('class', "btnOff")
+		$("#Timeline #Previous").attr('class', "btnOn")
 		//call create graph function
 
 		//give correct class attribute for modal
-		$("#graphPic").removeClass("week month").addClass("day");
+		$("#graphPic").removeClass("last5 last10").addClass("previous");
 
 });
 
 //set week graph output
-$("#Timeline #Week").click(function(e) {
-		$("#Timeline #Day").attr('class', "btnOff")
-		$("#Timeline #Month").attr('class', "btnOff")
-		$("#Timeline #Week").attr('class', "btnOn")
+$("#Timeline #Last5").click(function(e) {
+		$("#Timeline #Previous").attr('class', "btnOff")
+		$("#Timeline #Last10").attr('class', "btnOff")
+		$("#Timeline #Last5").attr('class', "btnOn")
 		//call create graph function
 
 		//give correct class attribute for modal
-		$("#graphPic").removeClass("day month").addClass("week");
+		$("#graphPic").removeClass("previous last10").addClass("last5");
 
 });
 
 //set month graph output
-$("#Timeline #Month").click(function(e) {
-		$("#Timeline #Day").attr('class', "btnOff")
-		$("#Timeline #Week").attr('class', "btnOff")
-		$("#Timeline #Month").attr('class', "btnOn")
+$("#Timeline #Last10").click(function(e) {
+		$("#Timeline #Previous").attr('class', "btnOff")
+		$("#Timeline #Last5").attr('class', "btnOff")
+		$("#Timeline #Last10").attr('class', "btnOn")
 		//call create graph function
 
 		//give correct class attribute for modal
-		$("#graphPic").removeClass("day week").addClass("month");
+		$("#graphPic").removeClass("previous last5").addClass("last10");
 
 });
 
@@ -67,13 +67,13 @@ $("#Timeline #Month").click(function(e) {
 //display correct modal for data, doesn't depend on if you click a line or bar graph
 $("#graphPic").click(function(e){
 	if($(this).hasClass("day") == true){
-		$(".text-center #dataGraph a").attr('data-target', "#dayData" );
+		$(".text-center #dataGraph a").attr('data-target', "#previousData" );
 	}
 	if($(this).hasClass("week") == true){	
-		$(".text-center #dataGraph a").attr('data-target', "#weekData" );
+		$(".text-center #dataGraph a").attr('data-target', "#last5Data" );
 	}
 	if($(this).hasClass("month") == true){
-		$(".text-center #dataGraph a").attr('data-target', "#monthData" );
+		$(".text-center #dataGraph a").attr('data-target', "#last10Data" );
 	}
 });
 

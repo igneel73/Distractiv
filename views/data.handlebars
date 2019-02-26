@@ -49,11 +49,11 @@
 			  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Math
 			  <span class="caret"></span></button>
 			  <ul class="dropdown-menu">
-					{{#each users}}
+					<!--{{#each users}}-->
 						{{#each activities}}
 							<li><a href="#">{{name}}</a></li>
 						{{/each}}
-	    			{{/each}}
+	    			<!--{{/each}}-->
 			  </ul>
 			</span>
 		</h4>
@@ -72,14 +72,14 @@
 
 		<h4 id="Timeline">Timeframe: 		
 			<span>
-				<button class="btnOn" id="Day">
-					Day
+				<button class="btnOn" id="Previous">
+					Previous
 				</button>
-				<button class="btnOff" id = "Week">
-					Week
+				<button class="btnOff" id = "Last5">
+					Last 5
 				</button>
-				<button class="btnOff" id="Month">
-					Month
+				<button class="btnOff" id="Last10">
+					Last 10
 				</button>
 			</span>
 		</h4>
@@ -91,52 +91,38 @@
 
 	<div class="text-center">
 		<div id="dataGraph">
-			<a href="#" data-toggle="modal" data-target="#dayData"><img id="graphPic" src="https://www.mathsisfun.com/data/images/bar-graph-fruit.svg" class="graph bar day"></a>
+			<a href="#" data-toggle="modal" data-target="#previousData"><img id="graphPic" src="https://www.mathsisfun.com/data/images/bar-graph-fruit.svg" class="graph bar previous"></a>
 		</div>
 	</div>
 
-				<!-- help modal content -->
-				<div class="modal fade" id="here" tabindex="-1">
-					<div class="modal-dialog modal-dialog-centered">
-				    <div class="modal-content">
-				      <div class="modal-body">
-				        <p>User Process</p>
-				        <p>How do I start an activity?</p>
-				        <p>How do I end an activity?</p>
-				        <p>How do I see my activity data?</p>
-				      </div>
-				    </div>
-				  </div>
-				</div>
-
 				<!-- day data modal content -->
-				<div class="modal fade" id="dayData" tabindex="-1">
+				<div class="modal fade" id="previousData" tabindex="-1">
 					<div class="modal-dialog modal-dialog-centered">
 				    <div class="modal-content">
 				      <div class="modal-body">
-				        <p>Day data</p>
+				        <p>Previous data</p>
 				      </div>
 				    </div>
 				  </div>
 				</div>
 
 				<!-- week data modal content -->
-				<div class="modal fade" id="weekData" tabindex="-1">
+				<div class="modal fade" id="last5Data" tabindex="-1">
 					<div class="modal-dialog modal-dialog-centered">
 				    <div class="modal-content">
 				      <div class="modal-body">
-				        <p>Week data</p>
+				        <p>Last 5 data</p>
 				      </div>
 				    </div>
 				  </div>
 				</div>
 
 				<!-- help modal content -->
-				<div class="modal fade" id="monthData" tabindex="-1">
+				<div class="modal fade" id="last10Data" tabindex="-1">
 					<div class="modal-dialog modal-dialog-centered">
 				    <div class="modal-content">
 				      <div class="modal-body">
-				        <p>Month data</p>
+				        <p>Last 10 data</p>
 				      </div>
 				    </div>
 				  </div>

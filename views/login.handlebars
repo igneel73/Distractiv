@@ -26,18 +26,30 @@
 		<form class="login p-5 my-5" action="./home" method="get">
 			<h5 class="m-2">Login To Existing Account</h5>
 			<input id="log-name" class="p-1 mx-3 my-2" type="text" name="user" placeholder="User Name">
-			<input class="p-1 mx-3 my-2" type="password" name="pass" placeholder="Password"> 
-			<input id="log" class="m-3 px-2" type="submit" name="login" value="Login">
+			<input id="log-pass" class="p-1 mx-3 my-2" type="password" name="pass" placeholder="Password"> 
+			<input data-toggle="modal" data-target="#" id="log" class="m-3 px-2" type="submit" name="login" value="Login">
 			<input class="signup-btn m-3 px-2" type="button" name="signup" value="Sign Up">
 		</form> 
 		<form class="signup p-5 my-5" action="./home" method="get">
 			<h5 class="m-2">Create An Account</h5>
-			<input class="p-1 mx-3 my-2" type="email" name="email" placeholder="example@email.com">
+			<input id="inputEmail" class="p-1 mx-3 my-2" type="email" name="email" placeholder="example@email.com">
 			<input id="sig-name" class="p-1 mx-3 my-2" type="text" name="user" placeholder="User Name">
-			<input class="p-1 mx-3 my-2" type="password" name="pass" placeholder="Password"> 
-			<input id="sig" class="m-3 px-2" type="submit" name="signup" value="Sign Up">
-			<input class="login-btn m-3 px-2" type="button" name="login" value="Login">
+			<input id="passWord" class="p-1 mx-3 my-2" type="password" name="pass" placeholder="Password"> 
+			<input data-toggle="modal" data-target="#" id="sig" class="m-3 px-2" type="submit" name="signup" value="Sign Up">
+			<input class="login-btn m-3 px-2" type="button" name="login" value="Back to Login Page">
 		</form>
+
+		<!-- required sign up modal -->
+		<div class="modal fade" id="logAndSignReq" tabindex="-1">
+			<div class="modal-dialog modal-dialog-centered">
+			    <div class="modal-content">
+			      <div class="modal-body">
+			        <p>All fields are required to sign up.</p>
+			      </div>
+			    </div>
+			</div>
+		</div>
+
 
 		<div class="social-login">
 			<fb:login-button button-type="continue_with" size="large" scope="public_profile,email" onlogin="checkLoginState();">
