@@ -28,21 +28,19 @@
 	</div>
 
 	<hr class="m-0">
-	<!-- help modal content -->
-		<div class="modal fade" id="helpModal" tabindex="-1">
-			<div class="modal-dialog modal-dialog-centered">
-				<div class="modal-content">
-					<div class="modal-body">
-				        <h6 class="py-3">How Do I Track My Procrastination Habits?</h6>
-				        <ol class="text-left">
-				        	<li class="px-2 py-1">We'll have to actually complete this screen</li>
-				        	<li class="px-2 py-1">Till then please be mindful of the nicest fruits</li>
-				        </ol>
-				      </div>
-				    </div>
-				  </div>
-				</div>	
+			
 
+	{{#if viewAlt}}
+	<div class="text-align: left">
+			{{#each users}}	
+			{{#each activities}}
+				<p>{{name}}</p>
+   			{{/each}}
+   			{{/each}}
+   			<p>hvhbdfhbvfdbvbfdbvjdfbv</p>
+	</div>
+
+	{{else}}
 	<div class="text-align: left">
 		<h4 id = "Type">Activity Type: 
 			<span class="dropdown">
@@ -94,6 +92,23 @@
 			<a href="#" data-toggle="modal" data-target="#previousData"><img id="graphPic" src="https://www.mathsisfun.com/data/images/bar-graph-fruit.svg" class="graph bar previous"></a>
 		</div>
 	</div>
+
+	{{/if}}
+	<!-- help modal content -->
+		<div class="modal fade" id="helpModal" tabindex="-1">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-body">
+				        <h6 class="py-3">How Do I Track My Procrastination Habits?</h6>
+				        <ol class="text-left">
+				        	<li class="px-2 py-1">We'll have to actually complete this screen</li>
+				        	<li class="px-2 py-1">Till then please be mindful of the nicest fruits</li>
+				        </ol>
+				      </div>
+				    </div>
+				  </div>
+				</div>	
+
 
 				<!-- day data modal content -->
 				<div class="modal fade" id="previousData" tabindex="-1">
