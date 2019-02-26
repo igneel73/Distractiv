@@ -11,12 +11,68 @@ exports.view = function(req, res){
 }
 
 exports.save = function (req, res){
-	var dist = req.params.dist;
-	data.distractions.push(dist);
-	if((typeof data)==='object') {
-		var write = JSON.stringify(data, null, 2);
+	let flag = false;
+	let dist = req.params.dist;
+	if(data.distractions.length == 0) {
+		dist = {
+			"type": `${dist}`,
+			"count": "1"
+		};
+		data.distractions.push(dist);
+	} else {
+		for(let val of data.distractions){
+			if(val.type == dist) {
+				console.log("same");
+				val.count++;
+				flag = true;
+				break;
+			} else {
+				console.log("different");
+			}
+		}
+		if(!flag){
+			dist = {
+			"type": `${dist}`,
+			"count": "1"
+			};
+			data.distractions.push(dist);
+		}
 	}
+	let write = JSON.stringify(data, null, 2);
 	fs.writeFileSync('./public/data.json', write);
 	res.json(data);
+}
+
+exports.complete = function(req, res){
+	let dur = req.params.dur;
+	let name = data.active_user;
+	let template = {"name": data.activity_name, "instances": [{"duration" : dur, "distractions": data.distractions}], "mostCommon": "Facebook"};
+	let flag = false;
+
+	for(let val of acts.users){
+		if(val.name == name) {
+			if(val.activities.length == 0){
+				val.activities.push(template);
+				break;
+			} else {
+				for(let activity of val.activities) {
+					if(activity.name == data.activity_name){
+						activity.instances.push({"duration": dur, "distractions": data.distractions, "mostCommon": "Facebook"});
+						flag = true;
+						break;
+					}				
+				}
+				if(!flag){
+					val.activities.push(template);
+				}
+			}
+			break;
+		}
+	}
+
+	let write = JSON.stringify(acts, null, 2);
+	fs.writeFileSync('./public/activities.json', write);
+	res.json(acts);
+
 }
 

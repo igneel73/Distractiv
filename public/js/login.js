@@ -30,7 +30,7 @@ $("#log").click(function(e){
 		$("#log").attr('data-target', "#logAndSignReq");
 	}
 	else{
-		$.get("/" + name, redirect);
+		$.get("/login/" + name, redirect);
 	}
 });
 
@@ -46,7 +46,7 @@ $("#sig").click(function(e){
 		$("#sig").attr('data-target', "#logAndSignReq");
 	}
 	else{
-		$.get("/" + name, redirect);
+		$.get("/signup/" + name + "/" + email, redirect);
 	}
 });
 
