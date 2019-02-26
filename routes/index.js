@@ -25,6 +25,7 @@ exports.next = function(req, res){
 	data.hours = hrs;
 	data.mins = mins;
 	data.date = new Date();
+	data.distractions = [];
 	if((typeof data)==='object') {
 		var write = JSON.stringify(data, null, 2);
 	}

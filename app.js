@@ -42,9 +42,11 @@ app.get('/', login.view);
 app.get('/home', index.view);
 app.get('/start', progress.view);
 app.get('/data', data.view);
-app.get('/:name', login.log);
+app.get('/login/:name', login.log);
+app.get('/signup/:name/:email', login.sig);
 app.get('/home/:name/:hrs/:mins', index.next);
 app.get('/save/:dist', progress.save);
+app.get('/complete/:dur', progress.complete);
 // Example route
 // app.get('/users', user.list);
 
