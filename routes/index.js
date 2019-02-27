@@ -13,6 +13,7 @@ exports.view = function(req, res){
 			var actData = val;
 		}
 	} 
+	//console.log(actData);
   	res.render('index', actData);
 }
 

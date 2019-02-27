@@ -32,12 +32,19 @@
 
 	{{#if viewAlt}}
 	<div class="text-align: left">
-			{{#each users}}	
+			<h1>All Data</h1>
 			{{#each activities}}
-				<p>{{name}}</p>
+				<h5>{{name}}</h5>
+				{{#each instances}}
+				<div>Instance</div>
+				<small>Duration: {{duration}} -- </small>
+					{{#each distractions}}
+						<small>Type: {{type}} -- </small>
+						<small>Count: {{count}} -- </small>
+					{{/each}}
+				<small>Most Common: {{mostCommon}}</small>
+				{{/each}}
    			{{/each}}
-   			{{/each}}
-   			<p>hvhbdfhbvfdbvbfdbvjdfbv</p>
 	</div>
 
 	{{else}}
@@ -47,11 +54,9 @@
 			  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Math
 			  <span class="caret"></span></button>
 			  <ul class="dropdown-menu">
-					<!--{{#each users}}-->
 						{{#each activities}}
 							<li><a href="#">{{name}}</a></li>
 						{{/each}}
-	    			<!--{{/each}}-->
 			  </ul>
 			</span>
 		</h4>
@@ -94,6 +99,8 @@
 	</div>
 
 	{{/if}}
+
+
 	<!-- help modal content -->
 		<div class="modal fade" id="helpModal" tabindex="-1">
 			<div class="modal-dialog modal-dialog-centered">

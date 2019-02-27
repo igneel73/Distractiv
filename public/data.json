@@ -1,23 +1,14 @@
 {
-
   "activity_name": "Science",
-  "hours": "00",
-  "mins": "00",
+  "hours": "23",
+  "mins": "15",
   "active_user": "Kush",
-  "date": "2019-02-26T02:50:50.567Z",
+  "date": "2019-02-27T21:59:36.570Z",
   "duration": "",
   "distractions": [
     {
       "type": "Twitter",
-      "count": 2
-    },
-    {
-      "type": "Facebook",
-      "count": 2
-    },
-    {
-      "type": "Friends",
-      "count": 2
+      "count": "1"
     }
   ],
   "mostCommon": ""

@@ -33,6 +33,23 @@
               ],
               "mostCommon": "Youtube"
             },
+            {
+              "duration": "0:0:2",
+              "distractions": [],
+              "mostCommon": "Facebook"
+            },
+            {
+              "duration": "0:1:-51",
+              "distractions": [
+                {
+                  "type": "Twitter",
+                  "count": "1"
+                }
+              ],
+              "mostCommon": "Facebook"
+            }
+          ]
+        },
         {
           "name": "Essay",
           "instances": [
@@ -47,6 +64,42 @@
               "mostCommon": "Friends"
             }
           ]
+        }
+      ]
+    },
+    {
+      "name": "Andrew",
+      "pass": "",
+      "mail": "aamuro@ucsd.edu",
+      "activities": [
+        {
+          "name": "Test",
+          "instances": [
+            {
+              "duration": "",
+              "distractions": [],
+              "mostCommon": ""
+            }
+          ]
+        },
+        {
+          "name": "Essay",
+          "instances": [
+            {
+              "duration": "0:0:16",
+              "distractions": [
+                {
+                  "type": "Instagram",
+                  "count": "1"
+                },
+                {
+                  "type": "Reddit",
+                  "count": "1"
+                }
+              ]
+            }
+          ],
+          "mostCommon": "Facebook"
         }
       ]
     }
