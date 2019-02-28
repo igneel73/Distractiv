@@ -32,7 +32,9 @@
                 }
               ],
               "mostCommon": "Youtube"
-            },
+            }
+          ]
+        },
         {
           "name": "Essay",
           "instances": [
