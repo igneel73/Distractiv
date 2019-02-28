@@ -31,7 +31,7 @@ a:hover {
 
 .start {
 	position: relative;
-	top: 130px;
+	top: 100px;
 	/*color: black;*/
 }
 
@@ -107,7 +107,7 @@ a:hover {
 }
 
 .fineRough {
-	width: 125 px;
+	width: 125px;
 	position: relative;
 }
 
@@ -117,7 +117,7 @@ a:hover {
 
 .clock-placeholder {
 	position: relative;
-	top: 35px;
+	top: 25px;
 }
 
 /* progress screen */
