@@ -20,7 +20,7 @@ function statusChangeCallback(response) {
 }
 
 function changeUser(response) {
-  $.get("/" + response.name, redirect);
+  $.get("/login/" + response.name, redirect);
 }
 
 function redirect(result){
