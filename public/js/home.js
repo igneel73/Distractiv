@@ -22,7 +22,7 @@ function redirect(result){
 	window.location.href = "/start";
 }
 
-//enable popovers
+
 
 //24 hour time limit
 $("#hours").change(function(){
