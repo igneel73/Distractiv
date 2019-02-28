@@ -12,7 +12,7 @@ exports.view = function(req, res){
 			var curAct = val;
 		}
 	}
-	curAct['viewAlt'] = false;
+	//curAct['viewAlt'] = false;
 
 	console.log(curAct);
 	res.render('data', curAct);
@@ -20,7 +20,7 @@ exports.view = function(req, res){
 
 };
 
-exports.viewAlt = function(request, response){
+/*exports.viewAlt = function(request, response){
 
 	for (let val of act.users){
 		if(val.name == data.active_user){
@@ -31,4 +31,4 @@ exports.viewAlt = function(request, response){
 	console.log(curAct);
   	response.render('data', curAct);
 };
-
+*/
