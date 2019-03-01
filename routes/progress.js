@@ -10,6 +10,10 @@ exports.view = function(req, res){
 	res.render('progress', data);
 }
 
+exports.view2 = function(req, res){
+	res.render('progress2', data);
+}
+
 exports.save = function (req, res){
 	let flag = false;
 	let dist = req.params.dist;

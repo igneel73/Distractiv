@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+	<title>Progress Page</title>
+	{{> header}}
+</head>
+<body>
+	<!--<div>
+		<h4 class="screen-heading center-align p-3 m-0 shadow-md text-center">
+			In Progress		
+				<span style="font-size: 17px;float: right">
+						modal for help
+						<a href="#" data-toggle="modal" data-target="#helpModal">
+				  		<i class="fas fa-info-circle"></i></a>
+				</span>
+		</h4>
+	</div>-->
+	<div>
+		<h4 class="screen-heading p-3 m-0 shadow-md center-align text-center">
+			In Progress		
+		</h4>
+		<span id="help" style="font-size: 17px;">
+					<!--modal for help-->
+					<a href="#" data-toggle="modal" data-target="#helpModal">
+			  		<i class="fas fa-info-circle"></i></a>
+		</span>
+	</div>
+
+
+	<div class="text-center">
+		<hr class="m-0">	
+
+		<h5 class="prompt pb-1 pt-4 mb-4">
+			{{activity_name}}
+		</h5>
+		<div class="pop-up p-4 border rounded shadow-lg m-4">
+			<h4 class="prompt mb-4">
+				Details?
+			</h4>
+			<a id="1" class="icon"><i class="fab fa-facebook mx-1"></i></a>
+			<a id="2" class="icon"><i class="fab fa-instagram mx-1"></i></a>
+			<a id="3" class="icon"><i class="fab fa-twitter mx-1"></i></a>
+			<a id="4" class="icon"><i class="fab fa-reddit mx-1"></i></a>
+			<h6 class="m-2">
+				OR
+			</h6>
+			<input class="dist-type mx-3 mb-4"><br>
+			<a href="#" class="ok px-2 py-2 m-2 border">Ok</a>
+			<a href="#" class="cancel px-1 py-2 m-2 border">Cancel</a>
+		</div>
+
+		<!-- help modal content -->
+		<div class="modal fade" id="helpModal" tabindex="-1">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-body">
+				        <h6 class="py-3">How Do I Log a Distraction?</h6>
+				        <ol class="text-left">
+				        	<li class="px-2 py-1">Click on the "Distracted?" button</li>
+				        	<li class="px-2 py-1">Use the preset icons or type in your distraction.</li>
+				        	<li class="px-2 py-1">Press Ok!</li>
+				        </ol>
+				      </div>
+				    </div>
+				  </div>
+				</div>	
+
+
+		<div class="clock-motion my-3 mx-5">
+			<div class="time-num p-4">
+				<span id="hours">{{hours}}</span> : <span id="mins">{{mins}}</span> : <span id="secs">00</span>
+			</div>
+			<div class="time-elap px-4 py-1">
+				Time Left
+			</div>
+		</div>
+
+
+		<!--Distracted Button-->
+		<a href="#" style="background-color: #FF530D; position: relative; top: 80px;" class="dist px-4 py-2 mx-5 mt-3 border rounded distracted">
+			Click here if DISTRACTED
+		</a>
+
+		<!--Distracted count-->
+		<div class="dist-num p-2 my-2">
+			# of Distractions: <span class="num">0</span>
+		</div>
+
+		<!--Pause and End Button(side by side)-->
+		<div class="act-btn my-5">
+			<a href="#" class="pause border rounded mr-4 py-3 px-5 col-10">
+				Pause
+			</a>
+
+
+			<!-- modal for end -->
+			<button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#endModal">
+			  End
+			</button>
+		</div>
+
+			<!-- modal content -->
+			<div class="modal fade" id="endModal" tabindex="-1">
+			  <div class="modal-dialog modal-dialog-centered">
+			    <div class="modal-content">
+			      <div class="modal-body">
+			      	<p>
+			          <button type="button" class="btn btn-danger" onclick="location.href='/home'">Dismiss Activity</button>
+			    	</p>
+			      	<p>
+			          <button type="button" class="btn btn-secondary" data-dismiss="modal">Continue Activity</button>
+			    	</p>
+			    	<p>
+			          <button id="complete" type="button" class="btn btn-success">Activity Completed</button>
+			    	</p>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+		
+
+	</div>
+	<script type="text/javascript" src="/js/count.js"></script>
+</body>
+</html>
