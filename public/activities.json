@@ -16,7 +16,8 @@
                   "count": "3"
                 }
               ],
-              "mostCommon": "Facebook"
+              "mostCommon": "Facebook",
+              "total": "3"
             }
           ]
         },
@@ -28,15 +29,22 @@
               "distractions": [
                 {
                   "type": "Youtube",
-                  "count": "3"
+                  "count": "4"
                 }
               ],
-              "mostCommon": "Youtube"
+              "mostCommon": "Youtube",
+              "total": "4"
             },
             {
               "duration": "0:0:2",
-              "distractions": [],
-              "mostCommon": "Facebook"
+              "distractions": [
+                {
+                  "type": "Twitter",
+                  "count": "1"
+                }
+              ],
+              "mostCommon": "Facebook",
+              "total": "1"
             },
             {
               "duration": "0:1:-51",
@@ -46,7 +54,23 @@
                   "count": "1"
                 }
               ],
-              "mostCommon": "Facebook"
+              "mostCommon": "Facebook",
+              "total": "1"
+            },
+            {
+              "duration": "1:-59:-51",
+              "distractions": [
+                {
+                  "type": "Twitter",
+                  "count": 3
+                },
+                {
+                  "type": "Reddit",
+                  "count": "1"
+                }
+              ],
+              "mostCommon": "",
+              "total": "4"
             }
           ]
         },
@@ -58,10 +82,11 @@
               "distractions": [
                 {
                   "type": "Friends",
-                  "count": "3"
+                  "count": "8"
                 }
               ],
-              "mostCommon": "Friends"
+              "mostCommon": "Friends",
+              "total": "8"
             }
           ]
         }

@@ -13,6 +13,7 @@ exports.view = function(req, res) {
   "duration": "",
   "distractions": [],
   "mostCommon": ""
+
 };	
 	let write = JSON.stringify(template, null, 2);
 	fs.writeFileSync('./public/data.json', write);
@@ -42,8 +43,15 @@ exports.sig = function(req, res) {
 			"pass" : "",
 			"mail" : "",
 			"activities": [
+			]
+		};
+/*		{
+			"name" : "",
+			"pass" : "",
+			"mail" : "",
+			"activities": [
 				{
-          "name": "Test",
+          "name": "",
           "instances": [
             {
               "duration": "",
@@ -54,7 +62,7 @@ exports.sig = function(req, res) {
           ]
         		}
 			]
-		};
+		};*/
 
 	template.name = name;
 	template.mail = email;

@@ -3,6 +3,32 @@
 <html>
 <head>
 	{{> header}}
+<script id="chart">
+window.onload = function() {
+
+var dataPoints = [];
+
+var chart = new CanvasJS.Chart("dataGraph", {
+	animationEnabled: true,
+	theme: "light2",
+	title: {
+		text: "Select an Activity"
+	},
+	axisY: {
+		title: "Distractions",
+		titleFontSize: 20
+	},
+	data: [{
+		type: "column",
+		yValueFormatString: "#,### Units",
+		dataPoints: dataPoints
+	}]
+});
+
+chart.render();
+}
+</script>
+
 </head>
 <body>
 	<div class="text-center">
@@ -35,12 +61,14 @@
 				{{/each}}
    			{{/each}}
 	</div>
+		{{else}}-->
 
-	{{else}}-->
+
+
 	<div class="text-align: left">
 		<h4 id = "Type">Activity Type: 
 			<span class="dropdown">
-			  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Math
+			  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
 			  <span class="caret"></span></button>
 			  <ul class="dropdown-menu">
 						{{#each activities}}
@@ -81,12 +109,13 @@
 		<p>*click on graph for distraction details</p>
 	</div>
 
-	<div class="text-center">
+	<!--<div class="text-center">
 		<div id="dataGraph">
 			<a href="#" data-toggle="modal" data-target="#previousData"><img id="graphPic" src="https://www.mathsisfun.com/data/images/bar-graph-fruit.svg" class="graph bar previous"></a>
 		</div>
-	</div>
+	</div>-->
 
+<div id="dataGraph" data-toggle="modal" data-target="#previousData" class="bar previous" style="height: 300px; width: 100%;"></div>
 	<!--{{/if}}-->
 
 
@@ -151,7 +180,8 @@
 			</span>
 		</div>
 	</div>
-
+	<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
 	<script type="text/javascript" src="/js/dataPage.js"></script>
 </body>
