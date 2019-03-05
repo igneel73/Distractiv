@@ -28,14 +28,19 @@
               "distractions": [
                 {
                   "type": "Youtube",
-                  "count": "3"
+                  "count": "4"
                 }
               ],
               "mostCommon": "Youtube"
             },
             {
               "duration": "0:0:2",
-              "distractions": [],
+              "distractions": [
+                {
+                  "type": "Twitter",
+                  "count": "1"
+                }
+              ],
               "mostCommon": "Facebook"
             },
             {
@@ -58,12 +63,35 @@
               "distractions": [
                 {
                   "type": "Friends",
-                  "count": "3"
+                  "count": "8"
                 }
               ],
               "mostCommon": "Friends"
             }
           ]
+        },
+        {
+          "name": "lllllll",
+          "instances": [
+            {
+              "duration": "0:0:9",
+              "distractions": [
+                {
+                  "type": "Instagram",
+                  "count": "1"
+                },
+                {
+                  "type": "Twitter",
+                  "count": "1"
+                },
+                {
+                  "type": "Reddit",
+                  "count": "1"
+                }
+              ]
+            }
+          ],
+          "mostCommon": ""
         }
       ]
     }

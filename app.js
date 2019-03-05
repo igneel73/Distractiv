@@ -42,6 +42,9 @@ app.get('/', login.view);
 app.get('/home', index.view);
 app.get('/start', progress.view);
 app.get('/data', data.view);
+//call for charts
+app.get('/data/charts', data.updateChart);
+
 app.get('/start/B', progress.view2);
 //alternate for user testing
 //app.get('/data/viewAlt', data.viewAlt);
