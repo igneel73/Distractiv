@@ -10,13 +10,13 @@ $("#Type .dropdown .dropdown-menu li").click(function(e) {
 
 //set bar graph output
 $("#Graph #Bar").click(function(e) {
-		$("#Graph #Line").attr('class', "btnOff")
-		$("#Graph #Bar").attr('class', "btnOn")
+	$("#Graph #Line").attr('class', "btnOff")
+	$("#Graph #Bar").attr('class', "btnOn")
 		
-		//give correct class attribute for modal
-		$("#dataGraph").removeClass("line").addClass("bar");
+	//give correct class attribute for modal
+	$("#dataGraph").removeClass("line").addClass("bar");
 
-		//graph
+	//graph
 	//call for user data
 	$.get("/data/charts", addChart);
 
@@ -39,47 +39,47 @@ $("#Graph #Line").click(function(e) {
 
 //set previous graph output
 $("#Timeline #Previous").click(function(e) {
-		$("#Timeline #Last5").attr('class', "btnOff")
-		$("#Timeline #Last10").attr('class', "btnOff")
-		$("#Timeline #Previous").attr('class', "btnOn")
-		//call create graph function
+	$("#Timeline #Last5").attr('class', "btnOff")
+	$("#Timeline #Last10").attr('class', "btnOff")
+	$("#Timeline #Previous").attr('class', "btnOn")
+	//call create graph function
 
 
-		//give correct class attribute for modal
-		$("#dataGraph").removeClass("last5 last10").addClass("previous");
+	//give correct class attribute for modal
+	$("#dataGraph").removeClass("last5 last10").addClass("previous");
 
-			//call for user data
+	//call for user data
 	$.get("/data/charts", addChart);
 
 });
 
 //set last5 graph output
 $("#Timeline #Last5").click(function(e) {
-		$("#Timeline #Previous").attr('class', "btnOff")
-		$("#Timeline #Last10").attr('class', "btnOff")
-		$("#Timeline #Last5").attr('class', "btnOn")
+	$("#Timeline #Previous").attr('class', "btnOff")
+	$("#Timeline #Last10").attr('class', "btnOff")
+	$("#Timeline #Last5").attr('class', "btnOn")
 		
-		//call create graph function
+	//call create graph function
 
-		//give correct class attribute for modal
-		$("#dataGraph").removeClass("previous last10").addClass("last5");
+	//give correct class attribute for modal
+	$("#dataGraph").removeClass("previous last10").addClass("last5");
 
-		//call for user data
+	//call for user data
 	$.get("/data/charts", addChart);
 
 });
 
 //set last10 graph output
 $("#Timeline #Last10").click(function(e) {
-		$("#Timeline #Previous").attr('class', "btnOff")
-		$("#Timeline #Last5").attr('class', "btnOff")
-		$("#Timeline #Last10").attr('class', "btnOn")
-		//call create graph function
+	$("#Timeline #Previous").attr('class', "btnOff")
+	$("#Timeline #Last5").attr('class', "btnOff")
+	$("#Timeline #Last10").attr('class', "btnOn")	
+	//call create graph function
 
-		//give correct class attribute for modal
-		$("#dataGraph").removeClass("previous last5").addClass("last10");
+	//give correct class attribute for modal
+	$("#dataGraph").removeClass("previous last5").addClass("last10");
 
-		//call for user data
+	//call for user data
 	$.get("/data/charts", addChart);
 
 });
@@ -106,23 +106,23 @@ var Title = $("#Type .dropdown .btn").text();
 
 //get number timeframe
 var num = 0;
-if($("#dataGraph").hasClass("previous")==true){
-	num=1;
+if($("#dataGraph").hasClass("previous") == true){
+	num = 1;
 }
-if($("#dataGraph").hasClass("last5")==true){
-	num=5;
+if($("#dataGraph").hasClass("last5") == true){
+	num = 5;
 }
-if($("#dataGraph").hasClass("last10")==true){
-	num=10;
+if($("#dataGraph").hasClass("last10") == true){
+	num = 10;
 }
 
 //get bar or line
 var graphType = null;
-if($("#dataGraph").hasClass("bar")==true){
-	graphType= "column";
+if($("#dataGraph").hasClass("bar") == true){
+	graphType = "column";
 }
-if($("#dataGraph").hasClass("line")==true){
-	graphType="line";
+if($("#dataGraph").hasClass("line") == true){
+	graphType = "line";
 }
 
 //get proper index following activities
@@ -136,6 +136,10 @@ for(var i = 0; i<result['activities'].length; i++){
 	}
 }
 //console.log(actIndex);
+//do nothing if activity doesnt'exist
+if(actIndex == null){
+	return;
+}
 
 
 var dataPoints = [];
@@ -150,7 +154,7 @@ else if(result['activities'][actIndex]['instances'].length<=num){
 	index = 0;
 }
 	
-//console.log(index);
+//console.log(result['activities'][actIndex]['instances'][0]['total']);
 
 //get proper counts, fill dataPoints
 for (var i = index; i < num + index; i++) {
@@ -161,7 +165,7 @@ for (var i = index; i < num + index; i++) {
 	}
 	else{
 		//console.log(index);
-	//console.log(parseInt(result['activities'][actIndex]['instances'][i]['distractions'][0]['count']));
+	//console.log(parseInt(result['activities'][actIndex]['instances'][i]['distractions']));
 		if(result['activities'][actIndex]['instances'][i]['distractions'].length == 0){
 			dataPoints.push({
 				x: i+1,
@@ -171,17 +175,11 @@ for (var i = index; i < num + index; i++) {
 		else{
 			dataPoints.push({
 				x: i+1,
-				y: parseInt(result['activities'][actIndex]['instances'][i]['distractions'][0]['count'])//actually want this --['totalCount']-- to replace [0]['count'];
+				y: parseInt(result['activities'][actIndex]['instances'][i]['total'])//actually want this --['totalCount']-- to replace [0]['count'];
 			});
 		}
 	}
 }
-
-//var distValue = parseInt(result['activities'][actIndex]['instances'][0]['distractions'][0]['count']);
-//console.log(result['activities'][1]['instances'].length);
-//console.log(result['activities'][0]['name']);
-//console.log(result['activities'][actIndex]['instances'][0]['distractions'][0]['count']);
-//console.log(result['activities'][actIndex]['instances'][0]['distractions']);
 
 var chart = new CanvasJS.Chart("dataGraph", {
 	animationEnabled: true,

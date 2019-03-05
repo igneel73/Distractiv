@@ -23,32 +23,36 @@ $(".login-btn").click(function(e){
 //on login page
 $("#log").click(function(e){
 	e.preventDefault();
+	//reset data targer
+	$("#log").attr('data-target', "#");
+
+
 	var name = $("#log-name").val();
 	var pass = $("#log-pass").val();
-	console.log(name);
-	console.log(pass);
 	//error modal
 	if(name=="" | pass==""){
 		$("#log").attr('data-target', "#logAndSignReq");
 	}
 	else if(name!="" && pass!=""){
-		console.log("here");
-			$.get("/login/username/password", userCheck); 
+		$.get("/login/username/password", userCheck); 
 	}
 });
 
 function userCheck(result){
-console.log(result);
-/*			for(var i = 0; i<"{{users.length}}"; i++){
-				if("{{users[i].name}}" == name && "{{users[i].pass}}" == pass){
-					$.get("/login/" + name, redirect);
-				}
-			}
-		
-		else{
-			console.log("no user found");
+	var name = $("#log-name").val();
+	var pass = $("#log-pass").val();
+	var exists = null; 
+	
+	for(var i = 0; i<result['users'].length; i++){
+		if(result['users'][i]['name'] == name && result['users'][i]['pass'] == pass){
+			exists = true;
+			$.get("/login/" + name, redirect);
 		}
-		//$.get("/login/" + name, redirect);*/
+	}		
+	if(exists != true){
+		$("#notFound").modal('show');
+		//console.log("no user found");
+	}
 }
 
 
