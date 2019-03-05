@@ -50,6 +50,7 @@ app.get('/start/B', progress.view2);
 //app.get('/data/viewAlt', data.viewAlt);
 
 app.get('/login/:name', login.log);
+app.get('/login/username/password', login.checkUser);
 app.get('/signup/:name/:email', login.sig);
 app.get('/home/:name/:hrs/:mins', index.next);
 app.get('/save/:dist', progress.save);
