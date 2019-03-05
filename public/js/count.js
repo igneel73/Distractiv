@@ -167,6 +167,7 @@ $(".icon").click( function(e){
 $("#complete").click( function(e){
 	// compute duration
 	let duration = "";
+	let total = $(".dist-num .num").text();
 
 	if(!timeset){
 		duration = hrs + ":" + mins + ":" + secs;
@@ -175,7 +176,7 @@ $("#complete").click( function(e){
 		duration = (init_hrs - hrs)+":"+(init_mins - mins)+":"+(init_secs - secs);
 	}
  	console.log(duration);
-	$.get("/complete/" + duration , redirect);
+	$.get("/complete/" + duration + "/" + total, redirect);
 });
 
 function redirect(result) {

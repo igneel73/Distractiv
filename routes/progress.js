@@ -48,9 +48,10 @@ exports.save = function (req, res){
 }
 
 exports.complete = function(req, res){
+	let total = req.params.total;
 	let dur = req.params.dur;
 	let name = data.active_user;
-	let template = {"name": data.activity_name, "instances": [{"duration" : dur, "distractions": data.distractions}], "mostCommon": ""};
+	let template = {"name": data.activity_name, "instances": [{"duration" : dur, "distractions": data.distractions, "mostCommon": "", "total": total}]};
 	let flag = false;
 
 	for(let val of acts.users){
@@ -61,7 +62,7 @@ exports.complete = function(req, res){
 			} else {
 				for(let activity of val.activities) {
 					if(activity.name == data.activity_name){
-						activity.instances.push({"duration": dur, "distractions": data.distractions, "mostCommon": ""});
+						activity.instances.push({"duration": dur, "distractions": data.distractions, "mostCommon": "", "total": total});
 						flag = true;
 						break;
 					}				

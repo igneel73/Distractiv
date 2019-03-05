@@ -54,7 +54,7 @@ app.get('/login/username/password', login.checkUser);
 app.get('/signup/:name/:email', login.sig);
 app.get('/home/:name/:hrs/:mins', index.next);
 app.get('/save/:dist', progress.save);
-app.get('/complete/:dur', progress.complete);
+app.get('/complete/:dur/:total', progress.complete);
 // Example route
 // app.get('/users', user.list);
 
