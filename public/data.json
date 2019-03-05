@@ -1,10 +1,19 @@
 {
-  "activity_name": "Math",
-  "hours": "00",
+  "activity_name": "Science",
+  "hours": "01",
   "mins": "00",
   "active_user": "Kush",
-  "date": "2019-03-05T04:47:02.322Z",
+  "date": "2019-03-05T05:23:54.228Z",
   "duration": "",
-  "distractions": [],
+  "distractions": [
+    {
+      "type": "Twitter",
+      "count": 3
+    },
+    {
+      "type": "Reddit",
+      "count": "1"
+    }
+  ],
   "mostCommon": ""
 }
