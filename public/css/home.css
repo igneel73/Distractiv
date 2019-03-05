@@ -31,7 +31,7 @@ a:hover {
 
 .start {
 	position: relative;
-	top: 180px;
+	top: 60px;
 	/*color: black;*/
 }
 
@@ -107,7 +107,7 @@ a:hover {
 }
 
 .fineRough {
-	width: 125 px;
+	width: 125px;
 	position: relative;
 }
 
@@ -117,7 +117,7 @@ a:hover {
 
 .clock-placeholder {
 	position: relative;
-	top: 60px;
+	top: 15px;
 }
 
 /* progress screen */
@@ -131,12 +131,12 @@ a:hover {
 .clock-motion {
 	box-sizing: border-box;
 	position: relative;
-	top: 60px;
+	top: 50px;
 }
 
 .time-num {
 	display: relative;
-	top: 40px;
+	top: 35px;
 	font-size: 35px;
 }
 
@@ -149,7 +149,7 @@ a:hover {
 	font-size: 20px;
 	background-color: #efefef;
 	position: absolute;
-	bottom: 160px;
+	bottom: 170px;
 	left: 0;
 	right: 0;
 	margin: auto;
@@ -157,7 +157,7 @@ a:hover {
 
 .act-btn {
 	position: absolute;
-	bottom: 20px;
+	bottom: 30px;
 	left: 0;
 	right: 0;
 	margin: auto;

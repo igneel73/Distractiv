@@ -42,6 +42,10 @@ app.get('/', login.view);
 app.get('/home', index.view);
 app.get('/start', progress.view);
 app.get('/data', data.view);
+app.get('/start/B', progress.view2);
+//alternate for user testing
+//app.get('/data/viewAlt', data.viewAlt);
+
 app.get('/login/:name', login.log);
 app.get('/signup/:name/:email', login.sig);
 app.get('/home/:name/:hrs/:mins', index.next);

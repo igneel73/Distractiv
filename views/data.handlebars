@@ -2,18 +2,7 @@
 
 <html>
 <head>
-	<title>Data Page</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-	<link rel="stylesheet" href="/css/home.css">
+	{{> header}}
 </head>
 <body>
 	<div class="text-center">
@@ -28,32 +17,35 @@
 	</div>
 
 	<hr class="m-0">
-	<!-- help modal content -->
-		<div class="modal fade" id="helpModal" tabindex="-1">
-			<div class="modal-dialog modal-dialog-centered">
-				<div class="modal-content">
-					<div class="modal-body">
-				        <h6 class="py-3">How Do I Track My Procrastination Habits?</h6>
-				        <ol class="text-left">
-				        	<li class="px-2 py-1">We'll have to actually complete this screen</li>
-				        	<li class="px-2 py-1">Till then please be mindful of the nicest fruits</li>
-				        </ol>
-				      </div>
-				    </div>
-				  </div>
-				</div>	
+			
 
+	<!--{{#if viewAlt}}
+	<div class="text-align: left">
+			<h1>All Data</h1>
+			{{#each activities}}
+				<h5>{{name}}</h5>
+				{{#each instances}}
+				<div>Instance</div>
+				<small>Duration: {{duration}} -- </small>
+					{{#each distractions}}
+						<small>Type: {{type}} -- </small>
+						<small>Count: {{count}} -- </small>
+					{{/each}}
+				<small>Most Common: {{mostCommon}}</small>
+				{{/each}}
+   			{{/each}}
+	</div>
+
+	{{else}}-->
 	<div class="text-align: left">
 		<h4 id = "Type">Activity Type: 
 			<span class="dropdown">
 			  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Math
 			  <span class="caret"></span></button>
 			  <ul class="dropdown-menu">
-					<!--{{#each users}}-->
 						{{#each activities}}
 							<li><a href="#">{{name}}</a></li>
 						{{/each}}
-	    			<!--{{/each}}-->
 			  </ul>
 			</span>
 		</h4>
@@ -95,6 +87,25 @@
 		</div>
 	</div>
 
+	<!--{{/if}}-->
+
+
+	<!-- help modal content -->
+		<div class="modal fade" id="helpModal" tabindex="-1">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-body">
+				        <h6 class="py-3">How Do I Track My Procrastination Habits?</h6>
+				        <ol class="text-left">
+				        	<li class="px-2 py-1">We'll have to actually complete this screen</li>
+				        	<li class="px-2 py-1">Till then please be mindful of the nicest fruits</li>
+				        </ol>
+				      </div>
+				    </div>
+				  </div>
+				</div>	
+
+
 				<!-- day data modal content -->
 				<div class="modal fade" id="previousData" tabindex="-1">
 					<div class="modal-dialog modal-dialog-centered">
@@ -128,16 +139,6 @@
 				  </div>
 				</div>
 
-
-
-
-
-<!--		<div class="text-align: left">
-			<p>Most Recent</p>
-			{{#each distraction}}
-				<h6><small>Activity: {{name}} -- Distraction Count: {{amount}} -- Most Common: {{mostCommon}}</small></h6>
-   			{{/each}}
-		</div>-->
 
 	<div class="text-center">
 		<!--Activity and Navigation Button-->		
