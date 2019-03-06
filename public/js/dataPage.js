@@ -26,8 +26,6 @@ $("#Graph #Bar").click(function(e) {
 $("#Graph #Line").click(function(e) {
 	$("#Graph #Bar").attr('class', "btnOff")
 	$("#Graph #Line").attr('class', "btnOn")
-	//call create graph function(dummy image right now)
-	$("#dataGraph").attr('src', "https://www.smartsheet.com/sites/default/files/ic-line-charts-excel-single-line-graph-created.png");
 
 	//give correct class attribute for modal
 	$("#dataGraph").removeClass("bar").addClass("line");
@@ -135,13 +133,13 @@ for(var i = 0; i<result['activities'].length; i++){
 		break;
 	}
 }
-//console.log(actIndex);
+
 //do nothing if activity doesnt'exist
 if(actIndex == null){
 	return;
 }
 
-
+//array to fill chart with points
 var dataPoints = [];
 
 
@@ -154,31 +152,83 @@ else if(result['activities'][actIndex]['instances'].length<=num){
 	index = 0;
 }
 	
-//console.log(result['activities'][actIndex]['instances'][0]['total']);
+//template for html modal words
+var chartModalTemp = "";
+
+var startGreater = 0;
+var startTrue = 0;
 
 //get proper counts, fill dataPoints
-for (var i = index; i < num + index; i++) {
+for (var i = index, j = 1; i < num + index; i++, j++) {
+	//input filler values for x-axis 
 	if(i>=result['activities'][actIndex]['instances'].length){
+		if(startTrue == 0){
+			startGreater = j;
+			startTrue = 1;
+		}
+
 		dataPoints.push({
-			label: i+1			
+			label: j			
 		});
+
+		if(i == (num-1)){
+			if(startGreater!=num){
+				chartModalTemp += '<p>' + startGreater +'-' + num +'. '+ 'No data for these activities.' +'</p>';
+			}
+			else{
+				chartModalTemp += '<p>' + startGreater + '. '+ 'No data for activity.' + '</p>';
+			} 
+		}
 	}
+
 	else{
-		//console.log(index);
-	//console.log(parseInt(result['activities'][actIndex]['instances'][i]['distractions']));
+		//instance for when there are no distractions
 		if(result['activities'][actIndex]['instances'][i]['distractions'].length == 0){
 			dataPoints.push({
-				label: i+1,
+				label: j,
 				y: 0
 			});
+			chartModalTemp += '<p>' + j + '. '+ '0 distractions. Great Job' + 
+			'<br>' + '&nbsp&nbsp&nbsp&nbspDuration: ' + result['activities'][actIndex]['instances'][j-1]['duration']
+			+ '<br>' + '&nbsp&nbsp&nbsp&nbspMost Common: ' + '</p>';
 		}
+		//distractions exist
 		else{
 			dataPoints.push({
-				label: i+1,
-				y: parseInt(result['activities'][actIndex]['instances'][i]['total'])//actually want this --['totalCount']-- to replace [0]['count'];
+				label: j,
+				y: parseInt(result['activities'][actIndex]['instances'][i]['total'])
 			});
+
+			//make another template to add to chart Modal temp that loops through result
+			var helpTemp = "";
+			//get specific distractions and their counts
+			for (var k = 0; k < result['activities'][actIndex]['instances'][i]['distractions'].length; k++){
+				helpTemp += '<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspInstance: ' + 
+				result['activities'][actIndex]['instances'][i]['distractions'][k]['type'] + ', count: '
+				+ result['activities'][actIndex]['instances'][i]['distractions'][k]['count'];
+
+			}
+			chartModalTemp += '<p>' + j + '. Total distractions: ' + result['activities'][actIndex]['instances'][j-1]['total'] 
+			 + helpTemp + '<br>' + '&nbsp&nbsp&nbsp&nbspDuration: ' + result['activities'][actIndex]['instances'][j-1]['duration'] + 
+			 '<br>' + '&nbsp&nbsp&nbsp&nbspMost Common: ' + '</p>';
 		}
 	}
+}
+//change title of correct modal
+var modalTitle = Title;
+
+//set html of the modal
+if($("#dataGraph").hasClass("previous") == true){
+	$("#pdTitle").html(modalTitle);
+	$("#prevText").html(chartModalTemp);
+}
+if($("#dataGraph").hasClass("last5") == true){
+	$("#l5Title").html(modalTitle);
+	$("#last5Text").html(chartModalTemp);	
+}
+if($("#dataGraph").hasClass("last10") == true){
+	$("#l10Title").html(modalTitle);
+	$("#last10Text").html(chartModalTemp);
 }
 
 var chart = new CanvasJS.Chart("dataGraph", {

@@ -12,7 +12,7 @@ exports.view = function(req, res){
 			var curAct = val;
 		}
 	}
-	//console.log(curAct);
+	console.log(curAct);
 	res.render('data', curAct);
 
 
