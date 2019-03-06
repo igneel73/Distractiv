@@ -23,7 +23,7 @@ $(".login-btn").click(function(e){
 //on login page
 $("#log").click(function(e){
 	e.preventDefault();
-	//reset data targer
+	//reset data target
 	$("#log").attr('data-target', "#");
 
 
@@ -60,6 +60,9 @@ function userCheck(result){
 //on create account/sign up page, click sign up to sign up, goes to start activity
 $("#sig").click(function(e){
 	e.preventDefault();
+	//reset data target
+	$("#sig").attr('data-target', "#");
+
 	var email = $("#inputEmail").val();
 	var name = $("#sig-name").val();
 	var pass= $("#passWord").val();
@@ -68,9 +71,28 @@ $("#sig").click(function(e){
 		$("#sig").attr('data-target', "#logAndSignReq");
 	}
 	else{
-		$.get("/signup/" + name + "/" + email, redirect);
+		$.get("/login/username/password", existingUser); 
+
 	}
 });
+
+function existingUser(result){
+	var name = $("#sig-name").val();
+	var email = $("#inputEmail").val();
+	var exists = null; 
+	
+	for(var i = 0; i<result['users'].length; i++){
+		if(result['users'][i]['name'] == name){
+			exists = true;		
+			$("#userExists").modal('show');
+
+		}
+	}		
+	if(exists != true){
+		$.get("/signup/" + name + "/" + email, redirect);
+		//console.log("no user found");
+	}	
+}
 
 function redirect(result){
 	window.location.href = "/home";

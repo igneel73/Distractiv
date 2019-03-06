@@ -29,6 +29,11 @@
 			<input data-toggle="modal" data-target="#" id="sig" class="m-3 px-2" type="submit" name="signup" value="Sign Up">
 			<input class="login-btn m-3 px-2" type="button" name="login" value="Back to Login Page">
 		</form>
+		
+		<div class="social-login">
+			<fb:login-button button-type="continue_with" size="large" scope="public_profile,email" onlogin="checkLoginState();">
+			</fb:login-button>
+		</div>
 
 		<!-- required sign up modal -->
 		<div class="modal fade" id="logAndSignReq" tabindex="-1">
@@ -52,9 +57,15 @@
 			</div>
 		</div>
 
-		<div class="social-login">
-			<fb:login-button button-type="continue_with" size="large" scope="public_profile,email" onlogin="checkLoginState();">
-			</fb:login-button>
+		<!-- user already exists modal -->
+		<div class="modal fade" id="userExists" tabindex="-1">
+			<div class="modal-dialog modal-dialog-centered">
+			    <div class="modal-content">
+			      <div class="modal-body">
+			        <p>User Name already exists. Please input a diffrent one.</p>
+			      </div>
+			    </div>
+			</div>
 		</div>
 
 	</div>

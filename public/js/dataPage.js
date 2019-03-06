@@ -160,7 +160,7 @@ else if(result['activities'][actIndex]['instances'].length<=num){
 for (var i = index; i < num + index; i++) {
 	if(i>=result['activities'][actIndex]['instances'].length){
 		dataPoints.push({
-			x: i+1			
+			label: i+1			
 		});
 	}
 	else{
@@ -168,13 +168,13 @@ for (var i = index; i < num + index; i++) {
 	//console.log(parseInt(result['activities'][actIndex]['instances'][i]['distractions']));
 		if(result['activities'][actIndex]['instances'][i]['distractions'].length == 0){
 			dataPoints.push({
-				x: i+1,
+				label: i+1,
 				y: 0
 			});
 		}
 		else{
 			dataPoints.push({
-				x: i+1,
+				label: i+1,
 				y: parseInt(result['activities'][actIndex]['instances'][i]['total'])//actually want this --['totalCount']-- to replace [0]['count'];
 			});
 		}
