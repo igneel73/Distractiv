@@ -1,6 +1,20 @@
 <!doctype html>
 <html>
 <head>
+	<!-- Google Analytics Content Experiment code -->
+<script>function utmx_section(){}function utmx(){}(function(){var
+k='191120603-0',d=document,l=d.location,c=d.cookie;
+if(l.search.indexOf('utm_expid='+k)>0)return;
+function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
+indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
+length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
+'<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
+'://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
+'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
+valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
+'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
+</script><script>utmx('url','A/B');</script>
+<!-- End of Google Analytics Content Experiment code -->
 	<title>Progress Page</title>
 	{{> header}}
 	<!-- Google Analytics -->
@@ -38,6 +52,7 @@
 	</div>
 
 
+	{{#if viewAlt}}
 	<div class="text-center">
 		<hr class="m-0">	
 
@@ -109,6 +124,98 @@
 		</div>
 
 			<!-- modal content -->
+		<div class="modal fade" id="endModal" tabindex="-1">
+			  <div class="modal-dialog modal-dialog-centered">
+			    <div class="modal-content">
+			      <div class="modal-body">
+			      	<p>
+			          <button type="button" class="btn btn-danger" onclick="location.href='/home'">Dismiss Activity</button>
+			    	</p>
+			      	<p>
+			          <button type="button" class="btn btn-secondary" data-dismiss="modal">Continue Activity</button>
+			    	</p>
+			    	<p>
+			          <button id="complete" type="button" class="btn btn-success">Activity Completed</button>
+			    	</p>
+			      </div>
+			    </div>
+			  </div>
+		</div>
+	</div>
+	{{else}}
+	<div class="text-center">
+		<hr class="m-0">	
+
+		<h5 class="prompt pb-1 pt-4 mb-4">
+			{{activity_name}}
+		</h5>
+		<div class="pop-up p-4 border rounded shadow-lg m-4">
+			<h4 class="prompt mb-4">
+				Details?
+			</h4>
+			<a id="1" class="icon"><i class="fab fa-facebook mx-1"></i></a>
+			<a id="2" class="icon"><i class="fab fa-instagram mx-1"></i></a>
+			<a id="3" class="icon"><i class="fab fa-twitter mx-1"></i></a>
+			<a id="4" class="icon"><i class="fab fa-reddit mx-1"></i></a>
+			<h6 class="m-2">
+				OR
+			</h6>
+			<input class="dist-type mx-3 mb-4"><br>
+			<a href="#" class="ok px-2 py-2 m-2 border">Ok</a>
+			<a href="#" class="cancel px-1 py-2 m-2 border">Cancel</a>
+		</div>
+
+		<!-- help modal content -->
+		<div class="modal fade" id="helpModal" tabindex="-1">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-body">
+				        <h6 class="py-3">How Do I Log a Distraction?</h6>
+				        <ol class="text-left">
+				        	<li class="px-2 py-1">Click on the "Distracted?" button</li>
+				        	<li class="px-2 py-1">Use the preset icons or type in your distraction.</li>
+				        	<li class="px-2 py-1">Press Ok!</li>
+				        </ol>
+				      </div>
+				    </div>
+				  </div>
+				</div>	
+
+
+		<div class="clock-motion my-3 mx-5">
+			<div class="time-num p-4">
+				<span id="hours">{{hours}}</span> : <span id="mins">{{mins}}</span> : <span id="secs">00</span>
+			</div>
+			<div class="time-elap px-4 py-1">
+				Time Left
+			</div>
+		</div>
+
+
+		<!--Distracted Button-->
+		<a href="#" style="background-color: #FF530D; position: relative; top: 80px;" class="dist px-4 py-2 mx-5 mt-3 border rounded distracted">
+			Click here if DISTRACTED
+		</a>
+
+		<!--Distracted count-->
+		<div class="dist-num p-2 my-2">
+			# of Distractions: <span class="num">0</span>
+		</div>
+
+		<!--Pause and End Button(side by side)-->
+		<div class="act-btn my-5">
+			<a href="#" class="pause border rounded mr-4 py-3 px-5 col-10">
+				Pause
+			</a>
+
+
+			<!-- modal for end -->
+			<button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#endModal">
+			  End
+			</button>
+		</div>
+
+			<!-- modal content -->
 			<div class="modal fade" id="endModal" tabindex="-1">
 			  <div class="modal-dialog modal-dialog-centered">
 			    <div class="modal-content">
@@ -129,6 +236,7 @@
 		
 
 	</div>
+	{{/if}}
 	<script type="text/javascript" src="/js/count.js"></script>
 </body>
 </html>
