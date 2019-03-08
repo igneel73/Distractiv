@@ -1,10 +1,11 @@
 {
   "activity_name": "Math",
-  "hours": "00",
+  "hours": "01",
   "mins": "00",
   "active_user": "Kush",
-  "date": "2019-03-06T21:55:15.559Z",
+  "date": "2019-03-08T02:34:48.965Z",
   "duration": "",
   "distractions": [],
-  "mostCommon": ""
+  "mostCommon": "",
+  "viewAlt": false
 }

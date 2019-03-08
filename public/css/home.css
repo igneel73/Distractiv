@@ -1,3 +1,10 @@
+body {
+	--prim-color: #3b5998;
+	--sec-color: #5186E8;
+	--tert-color: #3541B2;
+	background-color: #eFeFeF;
+}
+
 .grad {
   background-image: linear-gradient(to bottom right, #66d9ff, white);
 }
@@ -17,6 +24,7 @@ hr {
 }
 
 .nav-button {
+	color: #3541B2;
 	height: 45px;
 }
 
@@ -34,7 +42,15 @@ a:hover {
 .start {
 	position: relative;
 	top: 60px;
-	/*color: black;*/
+	background-color: #3B7FAF;
+	color: white;
+}
+
+.start:hover{
+	position: relative;
+	top: 60px;
+	background-color: #3894A5;
+	color: #efefef;
 }
 
 #hours{
@@ -71,6 +87,11 @@ a:hover {
 	
 }
 
+.screen-heading {
+	background-color: var(--prim-color);
+	color: #EFEFEF;
+}
+
 .white{
 	background-color: white;
 }
@@ -99,7 +120,8 @@ a:hover {
 }
 
 .highlight {
-	background-color: #CCC5C5;
+	background-color: #7485A9;
+	color: #efefef;
 }
 
 .time-prompt {
@@ -128,7 +150,11 @@ a:hover {
 #help{
 	position: absolute;
 	right: 1rem;
-	top: 1.18rem;
+	top: 1.35rem;
+}
+
+.help-b{
+	color: #efefef;
 }
 
 .clock-motion {
@@ -193,6 +219,60 @@ a:hover {
 	display: block;
 }
 
+.login-btn{
+	background-color: var(--prim-color) !important; 
+	color: white;
+	border-radius: 5px;
+	box-shadow: none;
+	border-style: none;
+}
+.login-btn:hover{
+	background-color: var(--sec-color) !important; 
+	color: white;
+	border-radius: 5px;
+	box-shadow: none;
+	border-style: none;
+}
+#log{
+	color: white;
+	background-color: var(--prim-color) !important; 
+	border-radius: 5px;
+	box-shadow: none;
+	border-style: none;
+}
+#log:hover{
+	color: white;
+	background-color: var(--sec-color) !important; 
+	border-radius: 5px;
+	box-shadow: none;
+	border-style: none;
+}
+.signup-btn{
+	color: white;
+	background-color: var(--prim-color) !important; 
+	border-radius: 5px;
+	border-style: none;
+}
+.signup-btn:hover{
+	color: white;
+	background-color: var(--sec-color) !important; 
+	border-radius: 5px;
+	border-style: none;
+}
+#sig{	
+	color: white;
+	background-color: var(--prim-color) !important; 
+	border-radius: 5px;
+	border-style: none;
+}
+
+#sig:hover{	
+	color: white;
+	background-color: var(--sec-color) !important; 
+	border-radius: 5px;
+	border-style: none;
+}
+
 .signup {
 	display: block;
 	position: relative;
@@ -201,5 +281,4 @@ a:hover {
 
 .social-login{
 	position: relative;
-	/*top: 60px;*/
 }
