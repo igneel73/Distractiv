@@ -62,7 +62,7 @@
               "distractions": [
                 {
                   "type": "Twitter",
-                  "count": 3
+                  "count": "1"
                 },
                 {
                   "type": "Reddit",
@@ -70,7 +70,7 @@
                 }
               ],
               "mostCommon": "",
-              "total": "4"
+              "total": "2"
             }
           ]
         },
