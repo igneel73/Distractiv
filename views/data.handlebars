@@ -48,7 +48,7 @@ chart.render();
 		<span id="help" style="font-size: 17px;">
 					<!--modal for help-->
 					<a href="#" data-toggle="modal" data-target="#helpModal">
-			  		<i class="fas fa-info-circle"></i></a>
+			  		<i class="help-b fas fa-info-circle"></i></a>
 		</span>
 	</div>
 
@@ -75,14 +75,14 @@ chart.render();
 
 
 
-	<div class="text-align: left">
+	<div class="text-left m-3" style="font-size: 1rem">
 		<h4 id = "Type">Activity Type: 
-			<span class="dropdown">
-			  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+			<span class="dropdown" style="font-size: 1.5rem; position: relative; left: 5.8rem">
+			  <button class="btn but-prim dropdown-toggle" type="button" data-toggle="dropdown">
 			  <span class="caret"></span></button>
 			  <ul class="dropdown-menu">
 						{{#each activities}}
-							<li><a href="#">{{name}}</a></li>
+							<li class="p-2"><a href="#">{{name}}</a></li>
 						{{/each}}
 			  </ul>
 			</span>
@@ -90,7 +90,7 @@ chart.render();
 
 
 		<h4 id ="Graph">Graph:
-			<span>
+			<span style="font-size: 1.2rem;  position: relative; left: 10.4rem">
 				<button class="btnOn" id="Bar">
 					Bar
 				</button>
@@ -101,7 +101,7 @@ chart.render();
 		</h4>
 
 		<h4 id="Timeline">Timeframe: 		
-			<span>
+			<span style="font-size: 1rem;  position: relative; left: 0.5rem">
 				<button class="btnOn" id="Previous">
 					Previous
 				</button>
@@ -115,7 +115,7 @@ chart.render();
 		</h4>
 	</div>
 
-	<div>
+	<div class="m-3">
 		<p>*click on graph for distraction details</p>
 	</div>
 

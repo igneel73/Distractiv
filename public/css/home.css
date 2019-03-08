@@ -64,6 +64,20 @@ a:hover {
 	display: inline;
 }
 
+.pause{
+	background-color: var(--sec-color);
+}
+
+.ok{
+		background-color: var(--sec-color);
+
+}
+
+.cancel {
+		background-color: var(--sec-color);
+
+}
+
 
 
 .bar{
@@ -101,7 +115,7 @@ a:hover {
 	border-radius: 4px;
 	border-color: #007bff;
 	color: white;
-	background-color: #007bff;
+	background-color: var(--sec-color);
 }
 
 /*data off*/
@@ -281,4 +295,9 @@ a:hover {
 
 .social-login{
 	position: relative;
+}
+
+.dist{
+		background-color: var(--sec-color);
+
 }
