@@ -190,7 +190,7 @@ for (var i = index, j = 1; i < num + index; i++, j++) {
 			});
 			chartModalTemp += '<p>' + j + '. '+ '0 distractions. Great Job' + 
 			'<br>' + '&nbsp&nbsp&nbsp&nbspDuration: ' + result['activities'][actIndex]['instances'][j-1]['duration']
-			+ '<br>' + '&nbsp&nbsp&nbsp&nbspMost Common: ' + '</p>';
+			+ '<br>' + '&nbsp&nbsp&nbsp&nbspMost Common: None' + '</p>';
 		}
 		//distractions exist
 		else{
@@ -201,16 +201,45 @@ for (var i = index, j = 1; i < num + index; i++, j++) {
 
 			//make another template to add to chart Modal temp that loops through result
 			var helpTemp = "";
-			//get specific distractions and their counts
+
+			var mostCommon = [];
+			var max = 0;
+			
+			//get specific distractions and their counts, most Common as well
 			for (var k = 0; k < result['activities'][actIndex]['instances'][i]['distractions'].length; k++){
 				helpTemp += '<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspInstance: ' + 
 				result['activities'][actIndex]['instances'][i]['distractions'][k]['type'] + ', count: '
 				+ result['activities'][actIndex]['instances'][i]['distractions'][k]['count'];
 
+				//most common check
+				var maxCheck = parseInt(result['activities'][actIndex]['instances'][i]['distractions'][k]['count']);
+				if( maxCheck > max){
+					//reset mostCommon and push new distraction type
+					mostCommon = [];
+					mostCommon.push(result['activities'][actIndex]['instances'][i]['distractions'][k]['type']);
+					max = maxCheck;
+				}
+				else if(maxCheck == max){
+					mostCommon.push(result['activities'][actIndex]['instances'][i]['distractions'][k]['type']);
+				}
 			}
-			chartModalTemp += '<p>' + j + '. Total distractions: ' + result['activities'][actIndex]['instances'][j-1]['total'] 
-			 + helpTemp + '<br>' + '&nbsp&nbsp&nbsp&nbspDuration: ' + result['activities'][actIndex]['instances'][j-1]['duration'] + 
-			 '<br>' + '&nbsp&nbsp&nbsp&nbspMost Common: ' + '</p>';
+
+			//template for most Common 
+			var mostCommonText = "";
+			//fill mostCommonText
+			for(var s = 0; s < mostCommon.length; s++){
+				if(s == (mostCommon.length - 1)){
+						mostCommonText += mostCommon[s]; 
+				}
+				else{
+						mostCommonText += mostCommon[s] + ", ";
+				}
+			}
+
+			//main template
+			chartModalTemp += '<p>' + j + '. Total distractions: ' + result['activities'][actIndex]['instances'][i]['total'] 
+			 + helpTemp + '<br>' + '&nbsp&nbsp&nbsp&nbspDuration: ' + result['activities'][actIndex]['instances'][i]['duration'] + 
+			 '<br>' + '&nbsp&nbsp&nbsp&nbspMost Common: ' + mostCommonText + '</p>';
 		}
 	}
 }
