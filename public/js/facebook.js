@@ -1,4 +1,6 @@
 
+var name = "";
+
 function checkLoginState() {
   FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
@@ -15,12 +17,31 @@ function statusChangeCallback(response) {
   if (response.status === 'connected') {
     // Logged into your app and Facebook.
         console.log('Successfully logged in with Facebook');
-         FB.api('/me?fields=name,first_name,picture.width(480)', changeUser);
+        FB.api('/me?fields=name,first_name,picture.width(480)', changeUser);
   }
 }
 
 function changeUser(response) {
-  $.get("/login/" + response.name, redirect);
+  name = response.first_name;
+  $.get("/login/username/password", existingUser);
+}
+
+function existingUser(result){
+  var exists = null; 
+  
+  for(var i = 0; i<result['users'].length; i++){
+    if(result['users'][i]['name'] == name){
+      exists = true;    
+      $("#userExists").modal('show');
+
+    }
+  }   
+  if(exists != true){
+    $.get("/signup/" + name + "/" + email, redirect);
+    //console.log("no user found");
+  } else {
+    $.get("/login/" + name, redirect);
+  }
 }
 
 function redirect(result){
