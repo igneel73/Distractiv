@@ -28,7 +28,17 @@ var chart = new CanvasJS.Chart("dataGraph", {
 chart.render();
 }
 </script>
+<!-- Google Analytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
+	ga('create', 'UA-135786625-1', 'auto');
+	ga('send', 'pageview');
+	</script>
+	<!-- End Google Analytics -->
 </head>
 <body>
 	<div class="text-center">
@@ -38,7 +48,7 @@ chart.render();
 		<span id="help" style="font-size: 17px;">
 					<!--modal for help-->
 					<a href="#" data-toggle="modal" data-target="#helpModal">
-			  		<i class="fas fa-info-circle"></i></a>
+			  		<i class="help-b fas fa-info-circle"></i></a>
 		</span>
 	</div>
 
@@ -65,14 +75,14 @@ chart.render();
 
 
 
-	<div class="text-align: left">
+	<div class="text-left m-3" style="font-size: 1rem">
 		<h4 id = "Type">Activity Type: 
-			<span class="dropdown">
-			  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+			<span class="dropdown" style="font-size: 1.5rem; position: relative; left: 5.8rem">
+			  <button class="btn but-prim dropdown-toggle" type="button" data-toggle="dropdown">
 			  <span class="caret"></span></button>
 			  <ul class="dropdown-menu">
 						{{#each activities}}
-							<li><a href="#">{{name}}</a></li>
+							<li class="p-2"><a href="#">{{name}}</a></li>
 						{{/each}}
 			  </ul>
 			</span>
@@ -80,7 +90,7 @@ chart.render();
 
 
 		<h4 id ="Graph">Graph:
-			<span>
+			<span style="font-size: 1.2rem;  position: relative; left: 10.4rem">
 				<button class="btnOn" id="Bar">
 					Bar
 				</button>
@@ -91,7 +101,7 @@ chart.render();
 		</h4>
 
 		<h4 id="Timeline">Timeframe: 		
-			<span>
+			<span style="font-size: 1rem;  position: relative; left: 0.5rem">
 				<button class="btnOn" id="Previous">
 					Previous
 				</button>
@@ -105,7 +115,7 @@ chart.render();
 		</h4>
 	</div>
 
-	<div>
+	<div class="m-3">
 		<p>*click on graph for distraction details</p>
 	</div>
 
@@ -115,7 +125,7 @@ chart.render();
 		</div>
 	</div>-->
 
-<div id="dataGraph" data-toggle="modal" data-target="#previousData" class="bar previous" style="height: 300px; width: 100%;"></div>
+	<div id="dataGraph" data-toggle="modal" data-target="#previousData" class="bar previous graph" style="height: 300px; width: 90%"></div>
 	<!--{{/if}}-->
 
 
@@ -126,8 +136,10 @@ chart.render();
 					<div class="modal-body">
 				        <h6 class="py-3">How Do I Track My Procrastination Habits?</h6>
 				        <ol class="text-left">
-				        	<li class="px-2 py-1">We'll have to actually complete this screen</li>
-				        	<li class="px-2 py-1">Till then please be mindful of the nicest fruits</li>
+				        	<li class="px-2 py-1">Select an Activity Type</li>
+				        	<li class="px-2 py-1">Choose which graph type you want.</li>
+				        	<li class="px-2 py-1">Choose which timeframe you want.</li>
+				        	<li class="px-2 py-1">To see more in-depth data, click on the graph.</li>
 				        </ol>
 				      </div>
 				    </div>
@@ -139,9 +151,15 @@ chart.render();
 				<div class="modal fade" id="previousData" tabindex="-1">
 					<div class="modal-dialog modal-dialog-centered">
 				    <div class="modal-content">
-				      <div class="modal-body">
-				        <p>Previous data</p>
-				      </div>
+				          <div class="modal-header">
+					        <h5 class="modal-title" id = "pdTitle"></h5>
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					          <span aria-hidden="true">&times;</span>
+					        </button>
+					      </div>
+				      	  <div class="modal-body" id="prevText">
+				        	<p>No Previous data, select an activity</p>
+				          </div>
 				    </div>
 				  </div>
 				</div>
@@ -150,9 +168,15 @@ chart.render();
 				<div class="modal fade" id="last5Data" tabindex="-1">
 					<div class="modal-dialog modal-dialog-centered">
 				    <div class="modal-content">
-				      <div class="modal-body">
-				        <p>Last 5 data</p>
-				      </div>
+						<div class="modal-header">
+					        <h5 class="modal-title" id = "l5Title"></h5>
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					          <span aria-hidden="true">&times;</span>
+					        </button>
+					      </div>
+				          <div class="modal-body" id="last5Text">
+				              <p>No Last 5 data, select an activity</p>
+				          </div>
 				    </div>
 				  </div>
 				</div>
@@ -161,9 +185,15 @@ chart.render();
 				<div class="modal fade" id="last10Data" tabindex="-1">
 					<div class="modal-dialog modal-dialog-centered">
 				    <div class="modal-content">
-				      <div class="modal-body">
-				        <p>Last 10 data</p>
-				      </div>
+						<div class="modal-header">
+					      <h5 class="modal-title" id = "l10Title"></h5>
+					       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					        <span aria-hidden="true">&times;</span>
+					        </button>
+					      </div>
+				        <div class="modal-body" id="last10Text">
+				          <p>No Last 10 data, select an activity</p>
+				        </div>
 				    </div>
 				  </div>
 				</div>

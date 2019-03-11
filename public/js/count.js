@@ -113,6 +113,7 @@ $(".distracted").click(function(e) {
 });
 
 $(".ok").click(function(e){
+	ga("send", "event", "distract", "click");
 	// save the entry
 	let dist = "";
 	if($(".dist-type").val() != ""){

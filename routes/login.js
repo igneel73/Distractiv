@@ -17,10 +17,14 @@ exports.view = function(req, res) {
 };	
 	let write = JSON.stringify(template, null, 2);
 	fs.writeFileSync('./public/data.json', write);
-	res.render('login');
+	res.render('login', act);
 }
 
 // TODO check if user exists
+exports.checkUser = function(req,res){
+	res.json(act);
+}
+
 // save user in data
 exports.log = function(req, res) {
 	var name = req.params.name;

@@ -6,12 +6,15 @@ var data = require("../public/data.json");
 var fs = require("fs");
 var acts = require("../public/activities.json");
 
+
 exports.view = function(req, res){
+	data["viewAlt"] = false;
 	res.render('progress', data);
 }
 
 exports.view2 = function(req, res){
-	res.render('progress2', data);
+	data["viewAlt"] = true;
+	res.render('progress', data);
 }
 
 exports.save = function (req, res){

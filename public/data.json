@@ -3,17 +3,9 @@
   "hours": "01",
   "mins": "00",
   "active_user": "Kush",
-  "date": "2019-03-05T05:23:54.228Z",
+  "date": "2019-03-08T02:52:14.160Z",
   "duration": "",
-  "distractions": [
-    {
-      "type": "Twitter",
-      "count": 3
-    },
-    {
-      "type": "Reddit",
-      "count": "1"
-    }
-  ],
-  "mostCommon": ""
+  "distractions": [],
+  "mostCommon": "",
+  "viewAlt": false
 }
