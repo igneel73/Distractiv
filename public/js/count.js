@@ -174,7 +174,7 @@ $("#complete").click( function(e){
 		duration = hrs + ":" + mins + ":" + secs;
 	} else {
 
-		duration = (init_hrs - hrs)+":"+(init_mins - mins)+":"+(init_secs - secs);
+		duration = getDur();
 	}
  	console.log(duration);
 	$.get("/complete/" + duration + "/" + total, redirect);
@@ -182,4 +182,15 @@ $("#complete").click( function(e){
 
 function redirect(result) {
 	window.location.href = "/data";
+}
+
+function getDur(){
+	let hrs_elap = init_hrs - hrs;
+	if(hrs_elap > 0){
+		var mins_elap = 60 + init_mins - mins;
+	} else {
+		var mins_elap = init_mins - mins;
+	} 
+
+	return hrs_elap+":"+mins_elap+":"+0;
 }
