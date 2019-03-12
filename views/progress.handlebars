@@ -59,21 +59,32 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 		<h5 class="prompt pb-1 pt-4 mb-4">
 			{{activity_name}}
 		</h5>
-		<div class="pop-up p-4 border rounded shadow-lg m-4">
-			<h4 class="prompt mb-4">
-				Details?
-			</h4>
-			<a id="1" class="icon"><i class="fab fa-facebook mx-1"></i></a>
-			<a id="2" class="icon"><i class="fab fa-instagram mx-1"></i></a>
-			<a id="3" class="icon"><i class="fab fa-twitter mx-1"></i></a>
-			<a id="4" class="icon"><i class="fab fa-reddit mx-1"></i></a>
-			<h6 class="m-2">
-				OR
-			</h6>
-			<input class="dist-type mx-3 mb-4"><br>
-			<a href="#" class="ok px-2 py-2 m-2 border">Ok</a>
-			<a href="#" class="cancel px-1 py-2 m-2 border">Cancel</a>
-		</div>
+	</div>	
+	
+			<!--<div class="pop-up p-4 border rounded shadow-lg m-4">-->
+	<div class="modal fade" id="distModal" tabindex="-1">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-body">
+						<h4 class="prompt mb-4">
+							Details?
+						</h4>
+						<a id="1" class="icon"><i class="fab fa-facebook mx-1"></i></a>
+						<a id="2" class="icon"><i class="fab fa-instagram mx-1"></i></a>
+						<a id="3" class="icon"><i class="fab fa-twitter mx-1"></i></a>
+						<a id="4" class="icon"><i class="fab fa-reddit mx-1"></i></a>
+						<h6 class="m-2">
+							OR
+						</h6>
+						<input class="dist-type mx-3 mb-4"><br>
+						<!--<button type="button" class="close ok px-2 py-2 m-2 border" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Ok</span></button>-->
+						<a href="#" class="ok px-2 py-2 m-2 border" data-toggle="modal" data-target="#">Ok</a>
+						<a href="#" class="cancel px-1 py-2 m-2 border">Cancel</a>
+				      </div>
+				    </div>
+				  </div>
+				</div>	
+
 
 		<!-- help modal content -->
 		<div class="modal fade" id="helpModal" tabindex="-1">
@@ -149,21 +160,42 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 		<h5 class="prompt pb-1 pt-4 mb-4">
 			{{activity_name}}
 		</h5>
-		<div class="pop-up p-4 border rounded shadow-lg m-4">
-			<h4 class="prompt mb-4">
-				Details?
-			</h4>
-			<a id="1" class="icon"><i class="fab fa-facebook mx-1"></i></a>
-			<a id="2" class="icon"><i class="fab fa-instagram mx-1"></i></a>
-			<a id="3" class="icon"><i class="fab fa-twitter mx-1"></i></a>
-			<a id="4" class="icon"><i class="fab fa-reddit mx-1"></i></a>
-			<h6 class="m-2">
-				OR
-			</h6>
-			<input class="dist-type mx-3 mb-4"><br>
-			<a href="#" class="ok px-2 py-2 m-2 border">Ok</a>
-			<a href="#" class="cancel px-1 py-2 m-2 border">Cancel</a>
-		</div>
+
+		<div class="modal fade" id="distModal" tabindex="-1" data-backdrop="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-body">
+						<h4 class="prompt mb-4">
+							Details?
+						</h4>
+						<a id="1" class="icon"><i class="fab fa-facebook mx-1"></i></a>
+						&nbsp&nbsp
+						<a id="2" class="icon"><i class="fab fa-instagram mx-1"></i></a>
+						&nbsp&nbsp
+						<a id="3" class="icon"><i class="fab fa-twitter mx-1"></i></a>
+						&nbsp&nbsp
+						<a id="4" class="icon"><i class="fab fa-reddit mx-1"></i></a>
+						<h6 class="m-2">
+							OR
+						</h6>
+						<input class="dist-type mx-3 mb-4"><br>
+						<a href="#" class="ok px-2 py-2 m-2 border" data-toggle="modal" data-target="#">Ok</a>
+						<a href="#" class="cancel px-1 py-2 m-2 border">Cancel</a>
+				      </div>
+				    </div>
+				  </div>
+				</div>	
+
+		<!-- please enter distraction content -->
+		<div class="modal fade" id="enterDist" tabindex="-1">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						Please enter distraction.
+				      </div>
+				    </div>
+				  </div>
+				</div>	
 
 		<!-- help modal content -->
 		<div class="modal fade" id="helpModal" tabindex="-1">
@@ -193,7 +225,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 
 
 		<!--Distracted Button-->
-		<a href="#" style="background-color: #; position: relative; top: 80px;" class="dist px-4 py-2 mx-5 mt-3 border rounded distracted">
+		<a href="#" style="background-color: #; position: relative; top: 80px; color: white" class="dist px-4 py-2 mx-5 mt-3 border rounded distracted" data-toggle="modal" data-target="#distModal">
 			Click here if DISTRACTED
 		</a>
 

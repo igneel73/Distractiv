@@ -34,7 +34,7 @@ a {
 
 a:hover {
 	text-decoration: none;
-	color:black;
+	color:white;
 }
 
 /* home screen */
@@ -42,16 +42,16 @@ a:hover {
 .start {
 	position: relative;
 	top: 60px;
-	background-color: #3B7FAF;
-	color: white;
+	/*background-color: #3B7FAF;
+	color: white;*/
 }
 
-.start:hover{
+/*.start:hover{
 	position: relative;
 	top: 60px;
 	background-color: #3894A5;
 	color: #efefef;
-}
+}*/
 
 #hours{
 	display: inline;
@@ -66,16 +66,20 @@ a:hover {
 
 .pause{
 	background-color: var(--sec-color);
+	color: white;
 }
 
 .ok{
-		background-color: var(--sec-color);
+	border-radius: 4px;
+	background-color: var(--sec-color);
+	color: white;
 
 }
 
 .cancel {
-		background-color: var(--sec-color);
-
+	border-radius: 4px;
+	background-color: var(--sec-color);
+	color: white;
 }
 
 
@@ -134,8 +138,10 @@ a:hover {
 }
 
 .highlight {
-	background-color: #7485A9;
-	color: #efefef;
+	background-color: #3b5998; 
+	color: white;
+	/*background-color: #7485A9;
+	color: #efefef;*/
 }
 
 .time-prompt {

@@ -104,34 +104,63 @@ function tick(){
 
 // increase distraction counter by one
 $(".distracted").click(function(e) {
+	e.preventDefault();
+	$("#distModal").attr('data-backdrop', "static")
 	var count = parseInt($(".dist-num .num").text());
 	count+= 1;
 	$(".dist-num .num").text(count);
-	$(".pop-up").show();
+	//$(".pop-up").show();
 	pause();
 
 });
 
 $(".ok").click(function(e){
+	//google analytics
 	ga("send", "event", "distract", "click");
-	// save the entry
-	let dist = "";
-	if($(".dist-type").val() != ""){
-		dist = $(".dist-type").val();
-		$(".dist-type").val("");
-	} else {
-		dist = preset[selected-1];
+
+	//reset data target
+	$(".ok").attr('data-target', "#" );
+		
+	console.log(selected);
+
+	if(selected == 0 && $(".dist-type").val() == ""){
+		console.log("no distraction");
+		$(".ok").attr('data-target', "#enterDist" );
 	}
+	else{
+		// save the entry
+		let dist = "";
+		if($(".dist-type").val() != ""){
+			dist = $(".dist-type").val();
+			$(".dist-type").val("");
+		} else {
+			dist = preset[selected-1];
+		}
 
-	$.get("/save/"+ dist, donothing);
+		$.get("/save/"+ dist, donothing);
 
+		// clear the selected color
+		for(let i = 1; i < 5; i++){
+			$(`#${i}.icon`).css("color", "black");
+		}
+		//clear selected
+		selected = 0;
+		// exit the modal
+		$("#distModal").attr('data-backdrop', "true")
+		$("#distModal").modal('toggle');
+
+		pause();
+	}
+});
+
+//if user clicks to enter text while an icon is selected
+$(".dist-type").click(function(e){
 	// clear the selected color
 	for(let i = 1; i < 5; i++){
 		$(`#${i}.icon`).css("color", "black");
 	}
-	// hide the popup
-	$(".pop-up").hide();
-	pause();
+	//clear select
+	selected = 0;
 });
 
 
@@ -145,16 +174,25 @@ $(".cancel").click(function(e){
 	for(let i = 1; i < 5; i++){
 		$(`#${i}.icon`).css("color", "black");
 	}
+	selected = 0;
 	$(".dist-type").val("");
-	// hide the popup
-	$(".pop-up").hide();
+
+	// exit modal
+	$("#distModal").attr('data-backdrop', "true")
+	$("#distModal").modal('toggle');
+
 	pause();
 	let count = parseInt($(".dist-num .num").text());
 	count--;
 	$(".dist-num .num").text(count);
 });
 
+//icon click
 $(".icon").click( function(e){
+	//clear text
+	$(".dist-type").val("");
+
+
 	for(let i = 1; i < 5; i++){
 		if($(this).attr('id') == i){
 			$(this).css("color", "#646FFF");
@@ -164,6 +202,7 @@ $(".icon").click( function(e){
 		}
 	}
 });
+
 
 $("#complete").click( function(e){
 	// compute duration

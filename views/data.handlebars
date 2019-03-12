@@ -76,9 +76,9 @@ chart.render();
 
 
 	<div class="text-left m-3" style="font-size: 1rem">
-		<h4 id = "Type">Activity Type: 
-			<span class="dropdown" style="font-size: 1.5rem; position: relative; left: 5.8rem">
-			  <button class="btn but-prim dropdown-toggle" type="button" data-toggle="dropdown">
+		<h5 id = "Type">Activity Type: 
+			<span class="dropdown" style="font-size: 1.5rem; position: relative">
+			  <button class="btnOn dropdown-toggle" type="button" data-toggle="dropdown" id="actButton">
 			  <span class="caret"></span></button>
 			  <ul class="dropdown-menu">
 						{{#each activities}}
@@ -86,11 +86,11 @@ chart.render();
 						{{/each}}
 			  </ul>
 			</span>
-		</h4>
+		</h5>
 
-
-		<h4 id ="Graph">Graph:
-			<span style="font-size: 1.2rem;  position: relative; left: 10.4rem">
+<!--; left: 5.8rem         !--left: 10.4rem       ; left: 0.5rem-->
+		<h5 id ="Graph">Graph:
+			<span style="font-size: 1.2rem;  position: relative">
 				<button class="btnOn" id="Bar">
 					Bar
 				</button>
@@ -98,10 +98,10 @@ chart.render();
 					Line
 				</button>
 			</span> 
-		</h4>
+		</h5>
 
-		<h4 id="Timeline">Timeframe: 		
-			<span style="font-size: 1rem;  position: relative; left: 0.5rem">
+		<h5 id="Timeline">Timeframe: 		
+			<span style="font-size: 1rem;  position: relative">
 				<button class="btnOn" id="Previous">
 					Previous
 				</button>
@@ -112,7 +112,7 @@ chart.render();
 					Last 10
 				</button>
 			</span>
-		</h4>
+		</h5>
 	</div>
 
 	<div class="m-3">

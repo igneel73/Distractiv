@@ -18,6 +18,25 @@
               ],
               "mostCommon": "Facebook",
               "total": "3"
+            },
+            {
+              "duration": "0:0:20",
+              "distractions": [
+                {
+                  "type": "Instagram",
+                  "count": 2
+                },
+                {
+                  "type": "Twitter",
+                  "count": "1"
+                },
+                {
+                  "type": "Facebook",
+                  "count": "1"
+                }
+              ],
+              "mostCommon": "",
+              "total": "4"
             }
           ]
         },
@@ -73,10 +92,88 @@
               "total": "2"
             },
             {
-              "duration": "1:-59:-54",
+              "duration": "1:59:54",
               "distractions": [],
               "mostCommon": "",
               "total": "0"
+            },
+            {
+              "duration": "0:11:7",
+              "distractions": [],
+              "mostCommon": "",
+              "total": "0"
+            },
+            {
+              "duration": "0:1:8",
+              "distractions": [
+                {
+                  "type": "Twitter",
+                  "count": 2
+                }
+              ],
+              "mostCommon": "",
+              "total": "2"
+            },
+            {
+              "duration": "0:0:11",
+              "distractions": [
+                {
+                  "type": "Instagram",
+                  "count": 2
+                },
+                {
+                  "type": "Twitter",
+                  "count": "1"
+                },
+                {
+                  "type": "hhhhhh",
+                  "count": "1"
+                }
+              ],
+              "mostCommon": "",
+              "total": "4"
+            },
+            {
+              "duration": "0:0:29",
+              "distractions": [
+                {
+                  "type": "Instagram",
+                  "count": 3
+                },
+                {
+                  "type": "Facebook",
+                  "count": "1"
+                }
+              ],
+              "mostCommon": "",
+              "total": "4"
+            },
+            {
+              "duration": "0:0:15",
+              "distractions": [
+                {
+                  "type": "Instagram",
+                  "count": 2
+                },
+                {
+                  "type": "Reddit",
+                  "count": "1"
+                },
+                {
+                  "type": "Facebook",
+                  "count": "1"
+                },
+                {
+                  "type": "Yums",
+                  "count": "1"
+                },
+                {
+                  "type": "Twitter",
+                  "count": "1"
+                }
+              ],
+              "mostCommon": "",
+              "total": "6"
             }
           ]
         },
@@ -104,6 +201,29 @@
               "distractions": [],
               "mostCommon": "",
               "total": "0"
+            },
+            {
+              "duration": "0:0:56",
+              "distractions": [
+                {
+                  "type": "Instagram",
+                  "count": 3
+                },
+                {
+                  "type": "Facebook",
+                  "count": 2
+                },
+                {
+                  "type": "Twitter",
+                  "count": 3
+                },
+                {
+                  "type": "Reddit",
+                  "count": 2
+                }
+              ],
+              "mostCommon": "",
+              "total": "10"
             }
           ]
         }

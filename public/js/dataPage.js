@@ -1,6 +1,6 @@
 //Change activity type dropdown text to match selected text
 $("#Type .dropdown .dropdown-menu li").click(function(e) {
-	$("#Type .dropdown .btn").text($(this).text());
+	$("#Type .dropdown #actButton").text($(this).text());
 
 	//call for user data
 	$.get("/data/charts", addChart);
@@ -100,7 +100,7 @@ $("#dataGraph").click(function(e){
 //later create graph function
 function addChart(result){
 //get title
-var Title = $("#Type .dropdown .btn").text();
+var Title = $("#Type .dropdown #actButton").text();
 
 //get number timeframe
 var num = 0;
@@ -188,7 +188,7 @@ for (var i = index, j = 1; i < num + index; i++, j++) {
 				label: j,
 				y: 0
 			});
-			chartModalTemp += '<p>' + j + '. '+ '0 distractions. Great Job' + 
+			chartModalTemp += '<p>' + j + '. '+ '0 distractions. Great Job!' + 
 			'<br>' + '&nbsp&nbsp&nbsp&nbspDuration: ' + result['activities'][actIndex]['instances'][j-1]['duration']
 			+ '<br>' + '&nbsp&nbsp&nbsp&nbspMost Common: None' + '</p>';
 		}
