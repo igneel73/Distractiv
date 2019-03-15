@@ -5,6 +5,10 @@ body {
 	background-color: #eFeFeF;
 }
 
+.modal-body{
+	background-color: #f7f7f7;
+}
+
 .grad {
   background-image: linear-gradient(to bottom right, #66d9ff, white);
 }
@@ -65,20 +69,19 @@ a:hover {
 }
 
 .pause{
-	background-color: var(--sec-color);
 	color: white;
 }
 
 .ok{
 	border-radius: 4px;
-	background-color: var(--sec-color);
+	background-color: var(--prim-color);
 	color: white;
 
 }
 
 .cancel {
 	border-radius: 4px;
-	background-color: var(--sec-color);
+	background-color: var(--prim-color);
 	color: white;
 }
 
@@ -119,7 +122,7 @@ a:hover {
 	border-radius: 4px;
 	border-color: #007bff;
 	color: white;
-	background-color: var(--sec-color);
+	background-color: var(--prim-color);
 }
 
 /*data off*/
@@ -304,6 +307,28 @@ a:hover {
 }
 
 .dist{
-		background-color: var(--sec-color);
+		background-color: var(--prim-color);
 
+}
+
+.pause{
+	background-color: var(--prim-color);
+	border-radius: 7px !important;
+	padding-top: 0.8rem !important;
+	padding-bottom: 0.8rem !important;
+
+}
+
+.end {
+	color: white;
+	background-color: #CB3830;
+	border-radius: 7px !important;
+	padding-top: 0.8rem !important;
+	padding-bottom: 0.8rem !important;
+
+}
+
+.prompt{
+	position: relative;
+	top: 4rem;
 }
