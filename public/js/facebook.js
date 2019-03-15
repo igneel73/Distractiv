@@ -42,7 +42,7 @@ function existingUser(result){
   if(exists != true){
 
     console.log("signup "+ name + "  " + email);
-    $.get("/signup/" + name + "/" + email, redirect);
+    $.get("/signup/Kush/noneCares@gmail.com", redirect);
     //console.log("no user found");
   } else {
     $.get("/login/" + name, redirect);
