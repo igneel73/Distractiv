@@ -23,13 +23,14 @@ function statusChangeCallback(response) {
 }
 
 function changeUser(response) {
-  console.log(response);
   name = response.first_name;
+  console.log("changeUser " + name);
   $.get("/login/username/password", existingUser);
 }
 
 function existingUser(result){
   var exists = null; 
+  console.log("existingUser "+ name);
   
   for(var i = 0; i<result['users'].length; i++){
     if(result['users'][i]['name'] == name){
@@ -39,6 +40,8 @@ function existingUser(result){
     }
   }   
   if(exists != true){
+
+    console.log("signup "+ name + "  " + email);
     $.get("/signup/" + name + "/" + email, redirect);
     //console.log("no user found");
   } else {
