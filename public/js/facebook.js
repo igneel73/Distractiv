@@ -25,7 +25,7 @@ function statusChangeCallback(response) {
 function changeUser(response) {
   name = response.first_name;
   console.log("changeUser " + name);
-  $.get("/login/username/password", existingUser);
+  $.get("/login/username/password", redirect);
 }
 
 function existingUser(result){
