@@ -23,6 +23,7 @@ function statusChangeCallback(response) {
 }
 
 function changeUser(response) {
+  console.log(response);
   name = response.first_name;
   $.get("/login/username/password", existingUser);
 }
