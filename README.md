@@ -1,5 +1,5 @@
-CSE 170 Final Project (To be Named)
+Distractiv
 ====
 
-In progress
+A distraction logging web application designed for mobile.
 
